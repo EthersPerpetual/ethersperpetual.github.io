@@ -1,4 +1,4 @@
-var api_domain = 'http://161.117.192.11:8080';
+var api_domain = 'https://www.uct.link/secure';
 // var api_domain = 'http://cw.wanzhantong.cn/api/v1/';
 var token = '';
 
