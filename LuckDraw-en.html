@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lucky draw</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0B0E1F;
+        }
+
+        header {
+            width: 100%;
+            height: 60px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0B0E1F;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        header>span {
+            text-align: center;
+        }
+
+        .h_img {
+            width: 22px;
+            height: 20px;
+            margin-left: 10px;
+        }
+
+        .lists {
+            width: 100%;
+            margin: 60px auto;
+            color: white;
+            text-align: center;
+        }
+
+        .lists>div {
+            width: 93%;
+            height: 70px;
+            margin: 15px auto;
+            background: #161A33;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .left {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+            font-size: 14px;
+                text-align: left;
+        }
+
+        .left>span:nth-of-type(2) {
+            color: #999999;
+            margin-top: 5%;
+        }
+
+        .right {
+            width: 30%;
+            margin-right: 20px;
+            text-align: right;
+            color: #6058FF;
+            font-size: 14px;
+        }
+        .layui-layer-loading .layui-layer-loading1{margin:0 auto;}
+    </style>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header>
+        <a href="javascript:history.back(-1)">
+            <img class="h_img" src="./img/ret.png" alt="">
+        </a>
+        <span style="margin-left: -30px">Lucky draw</span>
+        <div></div>
+    </header>
+    <!-- 列表 -->
+    <div class="lists">
+  <!--       <div>
+            <div class="left">
+                <span>投资金额：30ETH</span>
+                <span>2019.04.28 16:18:17</span>
+            </div>
+            <div class="right">
+                <span>未中奖</span>
+            </div>
+        </div>
+
+
+
+
+        <div>
+            <div class="left">
+                <span>投资金额：30ETH</span>
+                <span>2019.04.28 16:18:17</span>
+            </div>
+            <div class="right">
+                <span style="color:#e82e2e">获得2ETH</span>
+            </div>
+        </div>
+        <div>
+            <div class="left">
+                <span>提现</span>
+                <span>2019.04.28 16:18:17</span>
+            </div>
+            <div class="right">
+                <span>-20000</span>
+            </div>
+        </div> -->
+    </div>
+</body>
+
+<script src="./js/api.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./vendor/layer.js"></script>
+
+<script>
+loadding();
+var curPage = 1;
+         postFun('/api/lottery/list',{
+            page: curPage,
+            pageSize: 100,
+        },function(req){
+        if (req.basic.status == "1") {
+            layer.closeAll();
+                var html = ""
+                var data = req.data.list;
+                console.log(data)
+                if (data.length != 0) {
+                    for (i = 0; i < data.length; i++) {
+                         html += '<div>'+
+                                    '<div class="left">'
+                                     if(data[i].fee==0){
+                                        html+='<span>Free Draw</span>'
+                                    }else{
+                                        html+='<span>Service Charge：'+ data[i].fee +' ETH</span>'
+                                    }
+                                    
+                                html += '<span>'+ data[i].gmtCreate + '</span>'+
+                                        '</div>'+
+                                        '<div class="right">'
+                                    if(data[i].amount <= 0){
+                                         html += '<span>No prize</span>'
+                                    }else{
+                                         html += '<span style="color:#e82e2e">Get'+ data[i].amount +'ETH</span>'
+                                    }
+                                    html +=  '</div>'+
+                                    '</div>'
+
+                    }
+                    $(".lists").html(html)
+                } else {
+                    $(".lists").html('No record');
+                }
+                
+        }else{
+                 layer_msg(req.basic.msg);
+        }})
+
+
+    // $(window).on('scroll', function () {
+    //     /*判断当前浏览器高度，滚动条碰到时触发*/
+    //     if ($(window).scrollTop() >= $(document).height() - $(window).height()) {
+    //         curPage++;
+    //         postFun('/api/lottery/list',{
+    //         page: curPage,
+    //         pageSize: 10,
+    //     },function(req){
+    //     if (req.basic.status == "1") {
+    //             var html = ""
+    //             var data = req.data.data
+    //             // console.log(data)
+    //             if (data.length != 0) {
+    //                 for (i = 0; i < data.length; i++) {
+
+    //                    html += '<div>'+
+    //                                 '<div class="left">'+
+    //                                 '<span>Service Charge:'+ data[i].fee +' ETH</span>'+
+    //                                 '<span>'+ data[i].gmtCreate + '</span>'
+    //                             html += '</div>'+
+    //                                     '<div class="right">'
+    //                                 if(data[i].amount <= 0){
+    //                                      html += '<span>No prize</span>'
+    //                                 }else{
+    //                                      html += '<span style="color:#e82e2e">Get'+ data[i].amount +'ETH</span>'
+    //                                 }
+    //                                 html +=  '</div>'+
+    //                                 '</div>'
+    //                 }
+    //                 $(".lists").html(html)
+    //             } else {
+    //                 $(".lists").html('No record');
+    //             }
+                
+    //     }else{
+    //              layer_msg(req.basic.msg);
+    //     }})
+    //     }
+    // });
+
+</script>
+
+</html>

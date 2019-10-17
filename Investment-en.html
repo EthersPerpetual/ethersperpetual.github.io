@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Investment record</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0B0E1F;
+        }
+
+        header {
+            width: 100%;
+            height: 60px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0B0E1F;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        header>span {
+            text-align: center;
+        }
+
+        .h_img {
+            width: 22px;
+            height: 20px;
+            margin-left: 10px;
+        }
+
+        .lists {
+            text-align: center;
+            width: 100%;
+            margin: 60px auto;
+            color: white;
+        }
+
+        .lists .list-box {
+            width: 90%;
+            height: 95px;
+            margin: 15px auto;
+            background: #161A33;
+            border-radius: 5px;
+            color: white;
+            padding:5px 10px 0;
+        }
+        .lists h2{
+                font-size: 16px;
+                font-weight: normal;
+        }
+        .lists h2 .zh{
+            display:inline-block;
+            width:30%;
+            font-size:14px;
+            color:#1c9221;
+            text-align: right;
+
+        }
+        .lists h2 .jin{
+            display:inline-block;
+            width:70%;float:left;
+            text-align: left;
+        }
+        .lists p{font-size:12px;    border-top: 1px solid #0d1023;padding-top:10px;color:#999;text-align: left;}
+        .layui-layer-loading .layui-layer-loading1{margin:0 auto;}
+    </style>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header>
+        <a href="javascript:history.back(-1)">
+            <img class="h_img" src="./img/ret.png" alt="">
+        </a>
+        <span style="margin-left: -30px">Investment record</span>
+        <div></div>
+    </header>
+    <!-- 列表 -->
+    <div class="lists">
+        <!-- <div class="list-box">
+            <h2><span class="jin">投资额：1999</span>    <span class="zh">收益中</span></h2>
+            <div>hideTxid：sdweewresfdsfdf</div>
+            <p>冻结期间：2012-09-23 至 2031-23-42</p>
+        </div> -->
+    </div>
+</body>
+
+<script src="./js/api.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./vendor/layer.js"></script>
+<script>
+    loadding();
+     postFun('/api/investment/list',{
+            page: 1,
+            pageSize: 100,
+        },function(req){
+        if (req.basic.status == "1") {
+            layer.closeAll();
+                 var html = ""   
+                var data = req.data.list
+                // console.log(data)
+                if(data.length !=0){
+                    for (i = 0; i < data.length; i++) {
+                    html += '<div class="list-box">' +
+                                '<h2>' +
+                                    ' <span class="jin">Investment amount：' + data[i].amount + ' ETH</span>' 
+                                    if(data[i].txStatus==0){
+                                        html +=' <span class="zh">Confirm block</span>' 
+                                    }else if(data[i].txStatus==1){
+                                        html +=' <span class="zh">In revenue</span>' 
+                                    }else{
+                                        html +=' <span class="zh">Settlement completed</span>' 
+                                    }
+                            
+                                html +='</h2>' +
+                                '<p>Due date: ' + data[i].gmtFreezingPeriod + '</p>'+
+                            '</div>'
+                    }
+                    $(".lists").html(html)
+                }else{
+                    $(".lists").html('No record');
+                }
+                
+        }else{
+                 layer_msg(req.basic.msg);
+        }})
+
+</script>
+
+</html>
