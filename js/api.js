@@ -1,5 +1,4 @@
 var api_domain = 'https://www.uct.link/secure';
-// var api_domain = 'http://cw.wanzhantong.cn/api/v1/';
 var token = '';
 
 /**获取url中字段的值
@@ -31,7 +30,6 @@ function postFun(url, data, callbake) {
         "os": "3",
         "sign": "CBDE447D82EBC44207FAC122DA430122",
         "device": "20824660614580524044",
-        // "token": localStorage.getItem("token") || '8oBI0g==',
         "identity": localStorage.getItem("identity") || ''
     }
 };

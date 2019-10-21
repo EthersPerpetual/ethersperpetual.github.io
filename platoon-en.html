@@ -41,6 +41,7 @@
             width: 100%;
             margin: 60px auto;
             color: white;
+            text-align: center;
         }
 
         .lists .list-box {
@@ -49,6 +50,7 @@
             background: #161A33;
             border-radius: 5px;
             color: white;
+            text-align: left;
             padding: 5px 10px 1px;
         }
         .lists h2{
@@ -190,7 +192,7 @@ loadding();
                                                         }
                                                         $(".lists").html(html);
                                                          }else{
-                                                            $(".lists").html('暂无记录');
+                                                            $(".lists").html('<p>暂无记录</p>');
                                                     }
                                                      }else{
                                                  layer_msg(req.basic.msg);
@@ -203,7 +205,7 @@ loadding();
                             })
                     });
                 }else{
-                    $(".lists").html('暂无记录');
+                    $(".lists").html('<p>暂无记录</p>');
                 }
                 
         }else{

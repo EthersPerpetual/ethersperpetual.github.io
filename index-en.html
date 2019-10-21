@@ -4,351 +4,153 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ethers Perpetual</title>
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="css/iconfont/iconfont.css">
-       <style>
-              * {
-            margin: 0;
-            padding: 0;
-        }
-
-        .userinfo_box .iconfont {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
+    <link rel="stylesheet" href="./css/iconfont/iconfont.css">
+    <style>
         body {
             width: 100%;
-            background: url('./img/background.png');
-            background-size: 100%;
-            background-repeat: no-repeat;
-            font-size: 14px;
+            background: url('./img/bg.png') no-repeat 100% top,#0a0522;
+            background-size: 100% auto;
             color: white;
         }
-
-        .Tips {
-            width: 100%;
-            text-align: center;
+        .txt{
+            height: 320px;
+                width: 82%;
+                    padding: 30px 15px 0;
+                    letter-spacing: 0px;
         }
-
-        /* 弹出层 */
-        .ceng {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, .4);
-            color: black;
-        }
-
-        .fenxiang {
-            width: 50%;
-            height: 200px;
-            background: pink;
-            margin: 100px auto;
-            text-align: center;
-            word-wrap: break-word;
-            position: relative;
-        }
-
-        .ret {
-            width: 10%;
-            height: 10%;
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            position: absolute;
-            right: 5px;
-            top: 2px;
-        }
-
-        .fenxiang>#copy_button {
-            width: 120px;
-            height: 30px;
-            border: none;
-            color: white;
-            background: linear-gradient(0deg, rgba(254, 101, 88, 1) 0%, rgba(255, 146, 59, 1) 100%);
-            border-radius: 30px;
-        }
-
-        /* 邀请好友 */
-
-        .rulee {
-            position: absolute;
-            left: 13%;
-            top: 30%;
-            width: 75%;
-            min-height: 220px;
-            z-index: 9999;
-            overflow-y: scroll;
-            background: url('./img/hb.png');
-            background-size: 100%;
-            background-repeat: no-repeat;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-
-        .rulee>div:nth-of-type(1) {
-                width: 70%;
-                margin-top: 150px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: center;
-                overflow: hidden;
-                font-size: 22px;
-                color: #ffe28a;
-                    }
-        .rulee>div:nth-of-type(2){
-         width: 75%;
-        margin-top: 15px;
-        font-size: 16px;
-        color: #fff;
-            }
-        
-        .rulee>div:nth-of-type(2) span{color: #ffe28a;}
-
-        .fei {
-            width: 40%;
-            margin-top: 5%;
-        }
-
-        .copy {
-            word-wrap: break-word;
-            word-break: break-all;
-            overflow: hidden;
-            color: pink;
-        }
-
-        .copy1 {
-            width: 45%;
-            height: 30px;
-            /*background: url('./img/friends/矩形 6@2x.png');*/
-            background-size: 100%;
-            color: #A73502;
-            position: absolute;
-            top: 65%;
-            left: 28%;
-            text-align: center;
-            line-height: 26px;
-        }
-
-        .xx {
-                width: 120px;
-    margin: 20px;
-    padding: 10px;
-    background: linear-gradient(0deg, rgba(254, 101, 88, 1) 0%, rgba(255, 146, 59, 1) 100%);
-    border-radius: 20px;
-    color: #fff;
-        }
-
-        /* 活动规则 */
-        .activity {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, .8);
-            color: black;
-        }
-
-        .activity_1 {
-            width: 90%;
-            height: 100rem;
-            margin: 10% auto;
-            color: white;
-            background-image: url('./img/guize.png');
-            background-size: 100%;
-            background-repeat: no-repeat;
-            position: relative;
-        }
-
-        .activity_1>div:nth-of-type(1) {
-            position: absolute;
-            top: 5%;
-            /*left: %;*/
-            width: 100%;
-            height: 45rem;
-            margin: 0 auto;
-            overflow: auto;
-            line-height: 2rem;
-            font-size: 0.5rem;
-        }
-
-        .activity_1>div:nth-of-type(1)>span {
-            display: block;
-            text-indent: 0.5em;
-        }
-
-        .activity_2 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-
-        .activity_3 {
-            position: absolute;
-            top: 0%;
-            right: -5%;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            /* background: white; */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-
-        /* 复制链接按钮 */
-        .copylianjie {
-            width: 80%;
-            height: 30px;
-            border: none;
-            color: white;
-            background: linear-gradient(0deg, rgba(254, 101, 88, 1) 0%, rgba(255, 146, 59, 1) 100%);
-            border-radius: 30px;
-             margin: 20px 0;
-        }
+        .box5 .cantent>div>span:nth-of-type(2){width: 20%;}
+        .box5 .cantent>div>span:nth-of-type(1) {
+    width: 82%;
+}
+.box4 .cantent>div>span:nth-of-type(1){
+    line-height: 16px;
+}
+.box4 .cantent>div{padding: 5px 0;}
+.btn-1{    width: 100px;}
+.box4{background-size: 100% 100%;}
+.rulee>div:nth-of-type(1){margin-top: 128px;}
     </style>
+
 </head>
 
 <body>
-    <div id="box">
-        <!-- 头部 -->
-        <header>
+<div class="box1">
+        <div class="heard">
              <img class="caidan" src="./img/cd.png" alt="" id="icon_aside">
              <span style="font-size: 16px;">Ethers Perpetual</span>
-             <img  src="./img/wenhao.png" alt="" id="guize" class="guize" >
-             
-        </header>
-        <a href="index.html" style="position: absolute;left: 20px;z-index: 9;"><img class="guoqi" src="./img/guoqi.png" alt=""></a>
-        <!-- 提示 -->
-        <div class="Tips">
-            <span class="Tip"></span>
+             <img  src="./img/wenhao.png" alt="" id="guize" class="guize" >   
         </div>
-        <!-- 游戏介绍 -->
-        <div id="back1">
-            <img class="back1" src="./img/back1-en.png" alt="">
+         <a href="index.html" style="position: absolute;right: 8px;z-index: 9;"><img class="guoqi" src="./img/guoqi.png" alt="" width="30"></a>
+        <div class="logo">
+            <img src="./img/yuan-1.png" alt="" class="yuan-1"/>
+            <img src="./img/yuan-2.png" alt="" class="yuan-2"/>
+          <img src="./img/yuan-3.png" alt="" class="yuan-3"/>
+            <img src="./img/yuan-4.png" alt="" class="yuan-4"/>
+            <img src="./img/yuan-5.png" alt="" class="yuan-5"/>
+            <img src="./img/yuan-6.png" alt="" class="yuan-6"/>
+
         </div>
     </div>
 
-    <!-- 赌注 -->
-    <div id="back2">
-        <div class="tishi"><span class="coefficient"></span>Today's dividend<br>multiplier</div>
-        <img class="back2" src="./img/back2.png" alt="">
-        <div id="box1">
-            <div id="back4">
-            <div class="left" style="    margin-right: 15px;">
-                <span>All investments</span>
-                <div class="eth"> <span class="allBets"></span> ETH </div>
-            </div>
-            <div class="right">
-                <span>Companion fund</span>
-                <div class="eth"> <span class="supporter"></span> ETH </div>
-            </div>
-            
-        </div>
-            
-            <div class="back5">
-                <!-- <img src="./img/back5.png" alt=""> -->
-                <div class="back5_1">
-                    <div class="tou"><span>5</span> ETH</div>
-                    <div class="tou"><span>10</span> ETH</div>
-                    <div class="tou"><span>15</span> ETH</div>
-                    <!-- <div class="tou"><span>15</span> ETH</div> -->
-                </div>
-            </div>
-            <div class="back5">
-                <!-- <img src="./img/back5.png" alt=""> -->
-                <div class="back5_1">
-                    <div class="tou"><span>20</span> ETH</div>
-                    <div class="tou"><span>25</span> ETH</div>
-                    <div class="tou"><span>30</span> ETH</div>
-                    <!-- <div class="tou"><span>15</span> ETH</div> -->
-                </div>
-            </div>
-            <div class="jiajian">
-                <img class="jian" src="./img/jian.png" alt="">
-                <div>
-                    <span class="shu">1</span>
-                </div>
-                <img class="jia" src="./img/jia.png" alt="">
-            </div>
-            <!-- 投注 -->
-             <div class="touzhu" id="button">
-                <span class="tz">Betting</span>
-                <span class="pd">line up</span>
-            </div>
+    <div class="kong">&nbsp;</div>
+
+    <div class="box2">
+        <div class="title">Introduce</div>
+        <div class="txt">
+            EPP Ethernet is the world's first payment platform for real-time transactions in a full range based on its own public chain to build smart contracts. The platform uses the settlement mechanism of smart contracts to build a low-cost payment system, helping compliant parties to achieve automated transactions. Ethereum will also set off a new reform of the digital economy, and the top development team has laid the foundation for the success of EPP.
         </div>
     </div>
-    <!-- 信息 -->
-    <div class="xinxi">
-        <div class="xinxi_2">
-            <!-- <img src="./img/back3.png" alt=""> -->
-            <div class="cantent">
-                    <h3>My income</h3>
+
+<div class="box3">
+        <div class="game-title">
+            <h1>Fair game</h1>
+            <span>Simple, transparent and open source</span>
+        </div>
+        <div class="game-box">
+            <h2>All investments：<span class="allBets"></span> ETH</h2>
+            <h2>Companion fund：<span class="supporter"></span> ETH</h2>
+            <div class="box-1">
+                <div class="back5">
+                    <div class="back5_1">
+                        <div class="tou"><span>5</span> ETH</div>
+                        <div class="tou"><span>10</span> ETH</div>
+                        <div class="tou"><span>15</span> ETH</div>
+                    </div>
+                </div>
+                <div class="back5">
+                    <div class="back5_1">
+                        <div class="tou"><span>20</span> ETH</div>
+                        <div class="tou"><span>25</span> ETH</div>
+                        <div class="tou"><span>30</span> ETH</div>
+                    </div>
+                </div>
+                <div class="jiajian">
+                    <img class="jian" src="./img/jian.png" alt="">
+                    <div>
+                        <span class="shu">1</span>
+                    </div>
+                    <img class="jia" src="./img/jia.png" alt="">
+                </div>
+                <!-- 投注 -->
+                <div class="touzhu" id="button">
+                    <span class="tz">Betting</span>
+                    <span class="pd">line up</span>
+                </div>
+                
+                <div class="fenh">Today's dividend multiplier：<span class="coefficient"></span></div>
+
+            </div>
+        </div>
+    </div>  
+
+   
+   <div class="box4">
+        <h3>My income</h3>
+        <div class="cantent">
                     <div>
                         <span>Total revenue</span>
-                        <span class="allEarnings"></span>
+                         <span ><span class="huang allEarnings"></span> ETH</span>
                     </div>
                     <div>
                         <span>Current position </span>
-                        <span class="currentPosition"></span>
+                        <span ><span class="huang currentPosition"></span> ETH</span>
                     </div>
                     <div>
                         <span>Cashable Quantity</span>
-                        <span class="unlockAmount"></span>
+                        <span ><span class="huang unlockAmount"></span> ETH</span>
                     </div>
                     <div>
                         <span>Accumulated betting dividend</span>
-                        <span class="allStaticAmount"></span>
+                        <span ><span class="huang allStaticAmount"></span> ETH</span>
                     </div>
                      <div>
                         <span>Accumulated Node Benefits</span>
-                        <span class="allDynamicAmount"></span>
+                        <span ><span class="huang allDynamicAmount"></span> ETH</span>
+                    </div>
+                    <div>
+                        <span>Accumulated fund dividend</span>
+                        <span ><span class="huang hisSupporterAmount"></span> ETH</span>
                     </div>
                     <div>
                         <span>Receivable earnings</span>
-                            <span class="withdrawalAmount"></span>
+                            <span ><span class="huang withdrawalAmount"></span> ETH</span>
                     </div>
-                     <!-- <div>
-                        <span>静态分红可提现余额</span>
-                        <span class="hisStaticAmount"></span>
-                    </div>
-                    <div>
-                        <span>节点可提现余额</span>
-                            <span class="hisDynamicAmount"></span>
-                    </div> -->
-                    <div>
-                        <span> <button class="btn_tixian profit" >Cash withdrawal</button></span>
-                        <span> <button class="btn_tixian " id="futou">Double throw</button></span>
-                    </div>
-                </div>
         </div>
-        <div class="xinxi_1">
-            <div class="shang">
-                <img src="./img/dk.png" alt="">
-                <div class="cantent">
+        <div>
+            <span> <button class="btn profit" >Withdraw</button></span>
+            <span> <button class="btn " id="futou">Redelivery </button></span>
+        </div>
+    </div>
+
+    <div class="title">Statistics</div>
+    <div class="box5">
+        
+            <div class="cantent">
                     <div>
                         <span>Invitation code</span>
                         <span class="inviteCode"></span>
@@ -369,23 +171,14 @@
                         <span>Node level</span>
                         <span class="dynamicLevel"></span>
                     </div>
-                    
-                    <div class="lianjie tixian" id="chouj">Luck draw</div>
-                </div>
-            </div>
-            <div class="shang" style="margin-left: 3%;">
-                <img class="xk" src="./img/dk.png" alt="">
-                <div class="cantent">
-                    <!-- <div>
-                        <span>总收益</span>
-                        <span class="shouyi"></span>
-                    </div> -->
-                    <div>
+             </div>
+             <div class="cantent">
+                     <div>
                         <span>Recommender</span>
                         <span class="parentCode"></span>
                     </div>
                     <div>
-                        <span>total assets</span>
+                        <span>Total assets</span>
                         <span class="allInvest"></span>
                     </div>
                     <div>
@@ -395,17 +188,15 @@
                     <div>
                         <span>Lucky draw times</span>
                         <span class="luckyDrawTime"></span>
+                        <span class="btn-1" id="chouj">Luck draw</span>
                     </div>
                     <div>
                         <span>Repetition Number</span>
                         <span class="reInvestCount"></span>
+                        <span class="btn-1" id="redeem">Redeem</span>
                     </div>
-                     <div class="lianjie tixian" id="redeem">Redeem</div>
-                </div>
-            </div>
-
-            <button id="copy_button" class="copylianjie">Copy Invitation Links</button>
-        </div>
+             <button id="copy_button" class="copylianjie">Copy Invitation Links</button>
+    </div>
     </div>
 
     <!-- 侧导航 -->
@@ -453,6 +244,13 @@
                             <span class="iconfont icon-gengduo font20 fontc_f"></span>
                         </a>
                     </div>
+                    <div class="userinfo_item">
+                        <span class="iconfont font24 fonta9"><img src="img/7.png" alt=""></span>
+                        <a href="Bonus-list-en.html">
+                            <span class="fontc_f ">Bonus list</span>
+                            <span class="iconfont icon-gengduo font20 fontc_f"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -470,21 +268,28 @@
     <div class="activity hide">
         <div class="activity_1">
             <div>
-                <span>1. Amount of investment: 1-30 ETH, the amount must be an integer, a single account maximum investment of 30 ETH, after thawing can be re-invested.</span><br>
-                <span>2. The principal is thawed 7 days after your betting time. No dividends are calculated after thawing. Node rewards are calculated normally. You can withdraw them at any time. Node rewards are not calculated after withdrawal. If the performance clearance hierarchy remains unchanged before re-joining, the node dividend will be recalculated according to the new performance.</span><br>
-                <span>3.Membership levels are V1, V2, V3, V4, V5, V1:1-5 ETH, V2:6-10 ETH, V3, 11-15 ETH, V4, 16-20 ETH, V5, 21-30 ETH.</span><br>
-                <span>4、Casting dividend: V1 static dividend 0.8%, V2 static dividend 1%, V3 static dividend 1.2%, V4 static dividend 1.4%, V5 static dividend 1.6% (20% of the withdrawal fee), dynamic and static accelerated release of three times.</span><br>
-                <span> 5、Node reward: one generation, two generations, three generations, four generations and five generations. <br/>            V1: Only 50% of the static benefits of the first generation award.<br/>
- V2：Seventy percent of the static benefits of only one generation of incentives, and 30 percent of the second generation of incentives.、<br/>
-V3：Only 70% of the first generation awards, 40% of the second generation awards and 30% of the third generation awards.、<br/>
-V4：Only 80% of the first generation, 50% of the second generation, 40% of the third generation, 20% of the fourth generation, 10% of the fifth to tenth generation, 10% of the eleventh generation and 5% of the twentieth generation are awarded.、<br/>
-V5、Enjoy unlimited generation awards, 100% of the first generation's dividend, 70% of the second generation's dividend, 50% of the third generation's dividend, 30% of the fourth generation's dividend, 10% of the fifth to tenth generation's dividend, 5% of the eleventh to twenty-first generation's dividend and 1% after twenty-first generation's dividend..</span><br>
-                <span>6、Reward burns: When the amount of investment in one's account is less than that of recommended friends, the node reward is calculated on the basis of the amount of investment, such as A recommendation B, A bet 5ETH, B bet 15ETH, then A gets a daily bonus of (5*1/100)*50%.</span><br>
-                <span>7.Four percent of the total investment will be automatically allocated to special accounts, of which two percent will be used for ecological construction and application development. 2% for marketing、</span><br>
-                <span>8.Dividends and nodal incentives are automatically calculated by intelligent contracts. Every day UTC-8 time is automatically settled at 0:00, and the amount is paid when the amount is greater than or equal to 0.1. Otherwise, it will accumulate in the account and be automatically issued after the amount is greater than or equal to 0.1. After settlement, users can withdraw money at any time, all executed by intelligent contract code, no one can control it.、</span><br>
-                <span>9.Venturer mechanism: Smart contracts automatically assess the risk value of daily bets through Bancor protocol, the higher the risk. The higher the daily dividend and the corresponding node reward, the lower the daily dividend is, and the highest is, three times the basic proportion described above.，</span><br>
-                <span>10.Successor mechanism: when the contract is 0, the smart contract will take out the ETH award from the special account to the last 100 betting amount players, the reward amount is 2 times of the betting amount. (When the pool is zero, the system automatically doubles the return of the final investment of 100 bets; Article 11, when the pool is zero, the system restarts the game mechanism, all accounts are zero, and starts a new round of games. In the case of zero account, the original hierarchical relationship and game rules remain unchanged. ) </span><br>
-                <span>11.Nirvana mechanism: If the contract balance is 0, the automatic restart mechanism will restart all accounts to 0, but the node relationship will remain unchanged, and start a new round of games.。</span><br>
+                <span>1. Bet amount: 1-30eth, the amount must be an integer, the maximum investment limit of a single account is 30 eth, and can be re invested after unfreezing.</span><br>
+                <span>2. The principal will be unfrozen 10 days after the whole time of your bet. After unfreezing, no dividend will be calculated and node rewards will be calculated normally. You can withdraw at any time and no node rewards will be calculated after withdrawing. If the hierarchical relationship of performance reset remains unchanged before rejoining, the node dividend will be recalculated according to the new performance.</span><br>
+                <span>3.Membership level is v1-v5, V1: 1-5eth, V2: 6-10eth, V3; 11-15eth, V4: 16-20eth, V5: 21-30eth.</span><br>
+                <span>4.Dividend: 0.7% for V1, 0.9% for V2, 1.1% for V3, 1.2% for V4 and 1.3% for V5.</span><br>
+                <span> 5. Node reward: one generation for direct push, two generation for direct push, three generation for direct push, four generation for direct push, and 10 generation for unlimited push. <br/>
+                V1: get 20% of the daily dividend of generation 1;<br/>
+V2: 20% of the daily dividend of the first generation and 20% of the second generation;<br/>
+V3: 20% of the daily dividend of the first generation, 20% of the second generation and 20% of the third generation;<br/>
+V4: get 20% of the daily dividend of the first generation, 20% of the second generation, 20% of the third generation and 10% of the fourth generation;<br/>
+V5: get unlimited generation rewards, 20% of the daily dividend of the first generation, 20% of the second generation, 20% of the third generation, 10% of the fourth generation, 7% of the fifth to the tenth generation, 3% of the 11th to the 20th generation, and 1% after the 21st generation.</span><br>
+                <span>6. Reward burn: when the bet amount of your account is less than the recommended friend's bet amount, the node reward is calculated based on your account amount. When the bet amount of your account is greater than or equal to the recommended friend's bet amount, the node reward is calculated based on the recommended friend's bet amount. In addition, the node reward needs to be multiplied by the node level coefficient. V1 is 30%, V2 is 50%, V3 is 70%, V4 is 80%, and V5 is 100%. For example, if a recommends B, a bet 5eth, and B bet 30eth, then a gets a daily bonus of (5 * 1 / 100) * 20% * 30%.</span><br>
+                <span>7. 6% of the total investment will be automatically transferred to the special account, of which 2% will be used for ecological construction, 2% for application development and 2% for market promotion.</span><br>
+                <span>8. Dividends and node rewards are calculated automatically by the smart contract, and settled automatically at 0:00 Beijing time every day. After settlement, players can withdraw cash at any time, all of which are executed by the smart contract code, and no one can control it.</span><br>
+                <span>9. Adventurer mechanism: the smart contract will automatically evaluate the risk value of daily bet through Bancor protocol, and the higher the risk is. The higher the daily bonus and the corresponding node bonus, the minimum daily bonus is the basic proportion described above, and the maximum is three times of the basic proportion.</span><br>
+                <span>10. Lucky person mechanism: 80% of the profits to be withdrawn will be distributed according to eth, and 20% will form eth gold to reward participants. Eth gold and eth are exchanged at a ratio of 1:1. For example, one eth 0.8 earnings can be withdrawn and 0.2 earnings can be exchanged into eth gold. If the bet is successful, the re investment is successful, or an activated account is recommended, the chance to extract eth can be increased once, without capping. Eth gold cannot withdraw cash. 0.5 eth gold can participate in the lottery once.</span><br>
+                <span>11. Accompanier mechanism: 1% of the player's bet will enter the accompanier fund. Players who make three rounds of continuous re investment (click the "re investment" button to count as re investment) will be marked as accompaniers, one round every 10 days. All accompanies share the fund equally and enjoy a dividend every 10 days.<br>
+                1. There are three small reward pools, with V3 prize pool accounting for 20%, V4 prize pool accounting for 30%, and V5 prize pool accounting for 50%.<br>
+                2. When the player's bonus level reaches V3 or above and has been re invested for 3 consecutive rounds, the bonus pool of corresponding level can be divided equally according to the player's bonus level. If the player's bonus level is lower than V3, no bonus bonus will be obtained.</span><br>
+                <span>12. Dynamic equilibrium mechanism: when a large number of players rush in, the dynamic equilibrium mechanism will be automatically opened to avoid the impact of centralized betting on the overall data. When players participate in the queue, the queue amount does not calculate the dividend income, does not calculate the node income, and the queue amount can be withdrawn at any time.</span><br>
+                <span>13. Successor mechanism: when the contract is 0, the smart contract will take out eth from the special account to reward the last 30 players with the bet amount, which is twice of the bet amount.</span><br>
+<span>14. Nirvana mechanism: if the contract balance is 0, the restart mechanism will be started automatically. When restarting, everyone's account will return to 0, but the node relationship will not change, and a new round of game will start.
+</span><br>
                 <span>
                     Pattern highlights<br>
 1.Intelligent contract, 100% open source, open rules, transparent data；<br>
@@ -506,10 +311,9 @@ V5、Enjoy unlimited generation awards, 100% of the first generation's dividend,
 </body>
 
 <script src="./js/api.js"></script>
-<script src="./js/jquery.min.js"></script>
-<script src="./vendor/layer.js"></script>
-<script type="text/javascript"
-    src="https://www.jq22.com/demo/clipboard.js-master201703170013/dist/clipboard.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+<script src="https://www.jq22.com/demo/clipboard.js-master201703170013/dist/clipboard.min.js" type="text/javascript"></script>
 <script>
     var account = '';
     var net_id = '';
@@ -518,7 +322,7 @@ V5、Enjoy unlimited generation awards, 100% of the first generation's dividend,
     var invitation_code = get_param("invite_code");
     var currentPosition = '';
     var isQueueInvest = '';
-    localStorage.setItem("language", "chinese");
+    localStorage.setItem("language", "english");
 
     if (invitation_code == null || invitation_code == undefined || invitation_code == ""){
         invitation_code = '';
@@ -639,6 +443,7 @@ V5、Enjoy unlimited generation awards, 100% of the first generation's dividend,
 
     // 投资
     $("#button").click(function () {
+
         if (identity == "" || identity == undefined || identity == null){
             layer_msg("Please refresh and retry")
             return false;
@@ -667,13 +472,13 @@ V5、Enjoy unlimited generation awards, 100% of the first generation's dividend,
             return
         }
 
-
+        loadding();
         var zhuanzhang = value * 1000000000000000000
         window.web3.eth.sendTransaction({
             from: account,
             to: receiveAddress,
             value: zhuanzhang
-        }, function callback(err, value) {
+        }, function callback(err, hash) {
             if (err == null) {
                      postFun('/api/investment/pay',{
                         amount:""+value,
@@ -779,7 +584,7 @@ V5、Enjoy unlimited generation awards, 100% of the first generation's dividend,
                 if(req.data.prize.prizeValue==0){
                     $(".tit").html('Thank you for your patronage!');
                 }else{
-                    $(".tit").html('Congratulations on your winning the prize!');
+                    $(".tit").html('Congratulations on your winning!');
                     $(".ht").html('You got it'+ req.data.prize.prizeValue +'ETH，Your wallet has been put in. Please check it carefully.');
                 }
                 loginFun(account,invitation_code);
@@ -804,7 +609,7 @@ V5、Enjoy unlimited generation awards, 100% of the first generation's dividend,
                             identity = req.data.identity;
                             currentPosition = req.data.currentPosition;
                             isQueueInvest = req.data.isQueueInvest;
-                            $('.Invitation').html(req.data.invitationUrl);  //链接地址
+                           $('.Invitation').html(req.data.invitationUrl);  //链接地址
 
                             $('.inviteCode').html(req.data.inviteCode);     //邀请码
                             $('.staticLevel').html('Lv '+req.data.staticLevel); //分红等级
@@ -816,14 +621,17 @@ V5、Enjoy unlimited generation awards, 100% of the first generation's dividend,
                             $('.inviteAmount').html(req.data.inviteAmount);    //邀请人数
                             $('.comuitityNumber').html(req.data.comuitityNumber);               //网体人数
                             $('.gold').html(req.data.gold);               //以太金币
-                            $('.allEarnings').html(req.data.allEarnings+' ETH');       //总收益
-                            $('.currentPosition').html(req.data.currentPosition+' ETH');       //当前持仓
-                            $('.allStaticAmount').html(req.data.allStaticAmount+' ETH');       //投注分红
-                            $('.allDynamicAmount').html(req.data.allDynamicAmount+' ETH');       //节点收益
-                            $('.unlockAmount').html(req.data.unlockAmount+' ETH');       //静态分红可提现余额
-                            $('.withdrawalAmount').html(req.data.withdrawalAmount+' ETH');       //节点可提现余额
+                            $('.allEarnings').html(req.data.allEarnings);       //总收益
+                            $('.currentPosition').html(req.data.currentPosition);       //当前持仓
+                            $('.allStaticAmount').html(req.data.allStaticAmount);       //投注分红
+                            $('.allDynamicAmount').html(req.data.allDynamicAmount);       //节点收益
+                            $('.unlockAmount').html(req.data.unlockAmount);       //静态分红可提现余额
+                            $('.withdrawalAmount').html(req.data.withdrawalAmount);       //节点可提现余额
                             $('.allBets').html(req.data.allBets);       //所有投资
                             $('.coefficient').html('x'+req.data.coefficient);       //分红倍数
+                             $('.supporter').html(req.data.supporter || '0');       //伴随者基金
+                            $('.hisSupporterAmount').html(req.data.hisSupporterAmount || '0');       //累计基金分红
+
                             if(localStorage.getItem("identity") != identity){
                                 localStorage.setItem("identity", req.data.identity);
                             }         

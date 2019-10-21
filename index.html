@@ -4,351 +4,136 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ethers Perpetual</title>
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="css/iconfont/iconfont.css">
+    <!-- <link rel="stylesheet" href="./css/iconfont/iconfont.css"> -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        .userinfo_box .iconfont {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
         body {
             width: 100%;
-            background: url('./img/background.png');
-            background-size: 100%;
-            background-repeat: no-repeat;
-            font-size: 14px;
+            background: url('./img/bg.png') no-repeat 100% top,#0a0522;
+            background-size: 100% auto;
             color: white;
         }
 
-        .Tips {
-            width: 100%;
-            text-align: center;
-        }
-
-        /* 弹出层 */
-        .ceng {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, .4);
-            color: black;
-        }
-
-        .fenxiang {
-            width: 50%;
-            height: 200px;
-            background: pink;
-            margin: 100px auto;
-            text-align: center;
-            word-wrap: break-word;
-            position: relative;
-        }
-
-        .ret {
-            width: 10%;
-            height: 10%;
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            position: absolute;
-            right: 5px;
-            top: 2px;
-        }
-
-        .fenxiang>#copy_button {
-            width: 120px;
-            height: 30px;
-            border: none;
-            color: white;
-            background: linear-gradient(0deg, rgba(254, 101, 88, 1) 0%, rgba(255, 146, 59, 1) 100%);
-            border-radius: 30px;
-        }
-
-        /* 邀请好友 */
-
-        .rulee {
-            position: absolute;
-            left: 13%;
-            top: 30%;
-            width: 75%;
-            min-height: 220px;
-            z-index: 9999;
-            overflow-y: scroll;
-            background: url('./img/hb.png');
-            background-size: 100%;
-            background-repeat: no-repeat;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-
-        .rulee>div:nth-of-type(1) {
-                width: 70%;
-                margin-top: 150px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: center;
-                overflow: hidden;
-                font-size: 22px;
-                color: #ffe28a;
-                    }
-        .rulee>div:nth-of-type(2){
-         width: 75%;
-        margin-top: 15px;
-        font-size: 16px;
-        color: #fff;
-            }
         
-        .rulee>div:nth-of-type(2) span{color: #ffe28a;}
-
-        .fei {
-            width: 40%;
-            margin-top: 5%;
-        }
-
-        .copy {
-            word-wrap: break-word;
-            word-break: break-all;
-            overflow: hidden;
-            color: pink;
-        }
-
-        .copy1 {
-            width: 45%;
-            height: 30px;
-            /*background: url('./img/friends/矩形 6@2x.png');*/
-            background-size: 100%;
-            color: #A73502;
-            position: absolute;
-            top: 65%;
-            left: 28%;
-            text-align: center;
-            line-height: 26px;
-        }
-
-        .xx {
-                width: 120px;
-    margin: 20px;
-    padding: 10px;
-    background: linear-gradient(0deg, rgba(254, 101, 88, 1) 0%, rgba(255, 146, 59, 1) 100%);
-    border-radius: 20px;
-    color: #fff;
-        }
-
-        /* 活动规则 */
-        .activity {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, .8);
-            color: black;
-        }
-
-        .activity_1 {
-            width: 90%;
-            height: 100rem;
-            margin: 10% auto;
-            color: white;
-            background-image: url('./img/guize.png');
-            background-size: 100%;
-            background-repeat: no-repeat;
-            position: relative;
-        }
-
-        .activity_1>div:nth-of-type(1) {
-            position: absolute;
-            top: 5%;
-            /*left: %;*/
-            width: 100%;
-            height: 45rem;
-            margin: 0 auto;
-            overflow: auto;
-            line-height: 2rem;
-            font-size: 0.5rem;
-        }
-
-        .activity_1>div:nth-of-type(1)>span {
-            display: block;
-            text-indent: 0.5em;
-        }
-
-        .activity_2 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-
-        .activity_3 {
-            position: absolute;
-            top: 0%;
-            right: -5%;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            /* background: white; */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-
-        /* 复制链接按钮 */
-        .copylianjie {
-            width: 80%;
-            height: 30px;
-            border: none;
-            color: white;
-            background: linear-gradient(0deg, rgba(254, 101, 88, 1) 0%, rgba(255, 146, 59, 1) 100%);
-            border-radius: 30px;
-             margin: 20px 0;
-        }
     </style>
 </head>
 
 <body>
-    <div id="box">
-        <!-- 头部 -->
-        <header>
+    <div class="box1">
+        <div class="heard">
              <img class="caidan" src="./img/cd.png" alt="" id="icon_aside">
              <span style="font-size: 16px;">Ethers Perpetual</span>
-             <img  src="./img/wenhao.png" alt="" id="guize" class="guize" >
-             
-        </header>
-        <a href="index-en.html" style="position: absolute;left: 20px;z-index: 9;"><img class="guoqi" src="./img/guoqi-en.png" alt=""></a>
-        <!-- 提示 -->
-        <div class="Tips">
-            <span class="Tip"></span>
+             <img  src="./img/wenhao.png" alt="" id="guize" class="guize" >   
         </div>
-        <!-- 游戏介绍 -->
-        <div id="back1">
-            <img class="back1" src="./img/back1.png" alt="">
+        <a href="index-en.html" style="position: absolute;right: 8px;z-index: 9;"><img class="guoqi" src="./img/guoqi-en.png" alt="" width="30"></a>
+        <div class="logo">
+            <img src="./img/yuan-1.png" alt="" class="yuan-1"/>
+            <img src="./img/yuan-2.png" alt="" class="yuan-2"/>
+          <img src="./img/yuan-3.png" alt="" class="yuan-3"/>
+            <img src="./img/yuan-4.png" alt="" class="yuan-4"/>
+            <img src="./img/yuan-5.png" alt="" class="yuan-5"/>
+            <img src="./img/yuan-6.png" alt="" class="yuan-6"/>
+
         </div>
     </div>
 
-    <!-- 赌注 -->
-    <div id="back2">
-        <div class="tishi"><span class="coefficient"></span>今日分<br>红倍数</div>
-        <img class="back2" src="./img/back2.png" alt="">
-        <div id="box1">
-        <div id="back4">
-            <div class="left" style="    margin-right: 15px;">
-                <span>所有投资</span>
-                <div class="eth"> <span class="allBets"></span> ETH </div>
-            </div>
-            <div class="right">
-                <span>伴随者基金</span>
-                <div class="eth"> <span class="supporter"></span> ETH </div>
-            </div>
-            
-        </div>
-            
-            <div class="back5">
-                <!-- <img src="./img/back5.png" alt=""> -->
-                <div class="back5_1">
-                    <div class="tou"><span>5</span> ETH</div>
-                    <div class="tou"><span>10</span> ETH</div>
-                    <div class="tou"><span>15</span> ETH</div>
-                    <!-- <div class="tou"><span>15</span> ETH</div> -->
-                </div>
-            </div>
-            <div class="back5">
-                <!-- <img src="./img/back5.png" alt=""> -->
-                <div class="back5_1">
-                    <div class="tou"><span>20</span> ETH</div>
-                    <div class="tou"><span>25</span> ETH</div>
-                    <div class="tou"><span>30</span> ETH</div>
-                    <!-- <div class="tou"><span>15</span> ETH</div> -->
-                </div>
-            </div>
-            <div class="jiajian">
-                <img class="jian" src="./img/jian.png" alt="">
-                <div>
-                    <span class="shu">1</span>
-                </div>
-                <img class="jia" src="./img/jia.png" alt="">
-            </div>
-            <!-- 投注 -->
-            <div class="touzhu" id="button">
-                <span class="tz">投 注</span>
-                <span class="pd">排 单</span>
-            </div>
+    <div class="kong">&nbsp;</div>
+
+    <div class="box2">
+        <div class="title">项目介绍</div>
+        <div class="txt">
+            EPP以太永恒(Eth Perpetual)是全球第一家基于自己公有链搭建智能合约的、全范围内实时交易的支付平台，平台使用智能合约的结算机制来构建低成本的支付体系，帮助合规的双方达成自动化交易。以太永恒也将掀起数字经济的全新改革，顶尖的开发团队奠定了EPP成功的基础。
         </div>
     </div>
-    <!-- 信息 -->
-    <div class="xinxi">
-        <div class="xinxi_2">
-            <!-- <img src="./img/back3.png" alt=""> -->
-            <div class="cantent">
-                    <h3>我的收益</h3>
+
+    <div class="box3">
+        <div class="game-title">
+            <h1>公平博弈游戏</h1>
+            <span>规则简单 · 数据公开透明 · 代码开源</span>
+        </div>
+        <div class="game-box">
+            <h2>所有投资：<span class="allBets"></span> ETH</h2>
+            <h2>伴随者基金：<span class="supporter"></span> ETH</h2>
+            <div class="box-1">
+                <div class="back5">
+                    <div class="back5_1">
+                        <div class="tou"><span>5</span> ETH</div>
+                        <div class="tou"><span>10</span> ETH</div>
+                        <div class="tou"><span>15</span> ETH</div>
+                    </div>
+                </div>
+                <div class="back5">
+                    <div class="back5_1">
+                        <div class="tou"><span>20</span> ETH</div>
+                        <div class="tou"><span>25</span> ETH</div>
+                        <div class="tou"><span>30</span> ETH</div>
+                    </div>
+                </div>
+                <div class="jiajian">
+                    <img class="jian" src="./img/jian.png" alt="">
                     <div>
+                        <span class="shu">1</span>
+                    </div>
+                    <img class="jia" src="./img/jia.png" alt="">
+                </div>
+                <!-- 投注 -->
+                <div class="touzhu" id="button">
+                    <span class="tz">投 注</span>
+                    <span class="pd">排 单</span>
+                </div>
+                
+                <div class="fenh">今日分红倍数：<span class="coefficient"></span></div>
+
+            </div>
+        </div>
+    </div>    
+
+    <div class="box4">
+        <h3>我 的 收 益</h3>
+        <div class="cantent">
+            <div>
                         <span>总收益</span>
-                        <span class="allEarnings"></span>
+                        <span ><span class="huang allEarnings"></span> ETH</span>
                     </div>
                     <div>
                         <span>当前持仓</span>
-                        <span class="currentPosition"></span>
+                        <span ><span class="huang currentPosition"></span> ETH</span>
                     </div>
                     <div>
                         <span>可提现数量</span>
-                        <span class="unlockAmount"></span>
+                        <span ><span class="huang unlockAmount"></span> ETH</span>
                     </div>
                     <div>
                         <span>累计投注分红</span>
-                        <span class="allStaticAmount"></span>
+                        <span ><span class="huang allStaticAmount"></span> ETH</span>
                     </div>
                      <div>
                         <span>累计节点收益</span>
-                        <span class="allDynamicAmount"></span>
+                        <span ><span class="huang allDynamicAmount"></span> ETH</span>
+                    </div>
+                    <div>
+                        <span>累计基金分红</span>
+                        <span ><span class="huang hisSupporterAmount"></span> ETH</span>
                     </div>
                     <div>
                         <span>待提现收益</span>
-                            <span class="withdrawalAmount"></span>
+                        <span ><span class="huang withdrawalAmount"></span> ETH</span>
                     </div>
-                     <!-- <div>
-                        <span>静态分红可提现余额</span>
-                        <span class="hisStaticAmount"></span>
-                    </div>
-                    <div>
-                        <span>节点可提现余额</span>
-                            <span class="hisDynamicAmount"></span>
-                    </div> -->
-                    <div>
-                        <span> <button class="btn_tixian profit" >提现</button></span>
-                        <span> <button class="btn_tixian " id="futou">复投</button></span>
-                    </div>
-                </div>
         </div>
-        <div class="xinxi_1">
-            <div class="shang">
-                <img src="./img/dk.png" alt="">
-                <div class="cantent">
+        <div>
+            <span> <button class="btn profit" >提 现</button></span>
+            <span> <button class="btn " id="futou">复 投</button></span>
+        </div>
+    </div>
+
+    <div class="title">数据统计</div>
+    <div class="box5">
+        
+            <div class="cantent">
                     <div>
                         <span>邀请码</span>
                         <span class="inviteCode"></span>
@@ -369,18 +154,9 @@
                         <span>节点等级</span>
                         <span class="dynamicLevel"></span>
                     </div>
-                    
-                    <div class="lianjie tixian" id="chouj">抽奖</div>
-                </div>
-            </div>
-            <div class="shang" style="margin-left: 5%;">
-                <img class="xk" src="./img/dk.png" alt="">
-                <div class="cantent">
-                    <!-- <div>
-                        <span>总收益</span>
-                        <span class="shouyi"></span>
-                    </div> -->
-                    <div>
+             </div>
+             <div class="cantent">
+                     <div>
                         <span>推荐人</span>
                         <span class="parentCode"></span>
                     </div>
@@ -395,20 +171,19 @@
                     <div>
                         <span>抽奖次数</span>
                         <span class="luckyDrawTime"></span>
+                        <span class="btn-1" id="chouj">抽奖</span>
                     </div>
                     <div>
                         <span>复投次数</span>
                         <span class="reInvestCount"></span>
+                        <span class="btn-1" id="redeem">赎回</span>
                     </div>
-                     <div class="lianjie tixian" id="redeem">赎回</div>
-                </div>
-            </div>
-
-            <button id="copy_button" class="copylianjie">复制邀请链接</button>
-        </div>
+             <button id="copy_button" class="copylianjie">复制邀请链接</button>
+    </div>
     </div>
 
-    <!-- 侧导航 -->
+
+<!-- 侧导航 -->
     <aside class="aside hide">
         <div class="aside_mask"></div>
         <section class="aside_box">
@@ -453,6 +228,13 @@
                             <span class="iconfont icon-gengduo font20 fontc_f"></span>
                         </a>
                     </div>
+                    <div class="userinfo_item">
+                        <span class="iconfont font24 fonta9"><img src="img/7.png" alt=""></span>
+                        <a href="Bonus-list.html">
+                            <span class="fontc_f ">分红名单</span>
+                            <span class="iconfont icon-gengduo font20 fontc_f"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -471,21 +253,27 @@
         <div class="activity_1">
             <div>
                 <span>1. 投注金额：1-30ETH,金额必须为整数，单账户最大限额投资30个ETH，解冻后可以复投。</span><br>
-                <span>2. 您投注时候的整时7天后本金解冻、解冻后不计算分红、节点奖励正常计算，可以随时提现，提现后不计算节点奖励。若重新加入之前业绩清零层级关系不变，按新增业绩重新计算节点分红</span><br>
-                <span>3.会员等级为V1、V2、V3、V4、V5，  V1:  1-5ETH、V2: 6-10ETH、V3；11-15ETH、V4；16-20ETH、V5;21-30ETH.</span><br>
-                <span>4、投注分红：V1每日静态分红0.8%、V2每日静态分红1%、V3每日静态分红1.2%、V4每日静态分红1.4%、V5每日静态分红1.6%   （提现手续费20%，形成积分参与抽取以太坊）动静态加速释放三倍出局。</span><br>
-                <span> 5、节点奖励：直推一个拿一代，直推两个拿二代，直推三个拿三代，直推四个拿四代，直推五个拿无限代。<br/>
-                V1：只获得1代奖励的静态收益的百分之50、<br/>
- V2：只获得一代奖励的静态收益的百分之70、二代的百分之30、<br/>
-V3：只获得一代奖励的百分之70、二代的百分之40、三代的百分之30、<br/>
-V4：只获得一代奖励的百分之80、二代的百分之50、三代的百分之40、四代的百分之20、五到十代的百分之10、十一代到20代的百分之五、<br/>
-V5、可享受无限代奖励、一代分红的百分百、二代分红的百分之70、三代分红的百分之50、四代的百分之30、五到十代的百分之10、十一代到20代的百分之5、21代以后的百分之1.</span><br>
-                <span>6、奖励烧伤：自己账户投注金额小于推荐好友的投注时，节点奖励以自己的投注金额为基础计算、例如A推荐B,   A投注5ETH，B投注15ETH,则A每日得到奖金为（5*1/100)*50%</span><br>
-                <span>7.总体投资额的百分之4会自动划拨到专项账户，其中百分之2用于用于生态建设以及应用开发。百分之2用于市场推广、</span><br>
-                <span>8.分红及节点奖励由智能合约自动计算，每日UTC-8时间0点自动结算、金额大于等于0.1即发放，否则会在账户中累计，大于等于0.1后在自动发放。结算后用户可以随时提现，全部由智能合约代码执行，没有任何人可以控制、</span><br>
-                <span>9.冒险家机制：智能合约会通过bancor协议自动评估每天投注的风险值，风险越高。每日分红以及对应的节点奖励越高，每日分红最低为上文描述的基础比例，最高为基础比例的三倍，</span><br>
-                <span>10.继承者机制：合约为0时，智能合约将从专项账户中拿出ETH奖励给最后100名投注金额的玩家，奖励金额为投注金额的2倍。(当这个资金池为零的时候，系统自动会给最后投资的100投注金额两倍的收益；第十一条，当资金池为零了，系统重启这个游戏机制，所有人帐户全部归零，重新开始开始新的一轮游戏。在账户归零的情况下原有的层级关系和游戏规则保持不变。)</span><br>
-                <span>11.涅槃机制：如果合约余额为0，讲自动启动重启机制，重启时所有人账户都会归0，但是节点关系不变，并且开始新的一轮游戏。</span><br>
+                <span>2. 您投注时候的整时10天后本金解冻，解冻后不计算分红、节点奖励正常计算，可以随时提现，提现后不计算节点奖励。若重新加入之前业绩清零层级关系不变，按新增业绩重新计算节点分红。</span><br>
+                <span>3.会员等级为V1-V5，V1:  1-5ETH、V2: 6-10ETH、V3；11-15ETH、V4：16-20ETH、V5：21-30ETH。</span><br>
+                <span>4.投注分红：V1每日分红0.7%、V2每日分红0.9%、V3每日分红1.1%、V4每日分红1.2%、V5每日分红1.3%。</span><br>
+                <span> 5.节点奖励：直推一个拿1代，直推两个拿2代，直推三个拿3代，直推四个拿4代，直推10个拿无限代。<br/>
+                V1：获得1代每日分红的20%；<br/>
+ V2：获得1代每日分红的20%、2代的20%；<br/>
+V3：获得1代每日分红的20%、2代的20%、3代的20%；<br/>
+V4：获得1代每日分红的20%、2代的20%、3代的20%、4代的10%；<br/>
+V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、4代的10%、5到10代的7%、11代到20代的3%、21代以后的1%。</span><br>
+                <span>6.奖励烧伤：自己账户投注金额小于推荐好友投注额时，节点奖励以自己账户金额为基础计算，自己账户金额大于等于推荐好友的投注额时，节点奖励以推荐好友的投注金额为基础计算。另外节点奖励需要乘以节点等级系数，V1为30%，V2为50%，V3为70%，V4为80%，V5为100%，例如：A推荐B，A投注5ETH，B投注30ETH，则A每日得到的奖金为（5*1/100）*20%*30%。</span><br>
+                <span>7.总体投资额的6%会自动划拨到专项账户，其中2%会用于生态建设，2%用于应用开发，2%用于市场推广。</span><br>
+                <span>8.分红及节点奖励由智能合约自动计算，每日北京时间0点自动结算，结算后玩家可以随时提现，全部由智能合约代码执行，没有任何人可以控制。</span><br>
+                <span>9.冒险家机制：智能合约会通过bancor协议自动评估每天投注的风险值，风险越高。每日分红以及对应的节点奖励越高，每日分红最低为上文描述的基础比例，最高为基础比例的三倍。</span><br>
+                <span>10.幸运者机制：玩家提现时，其中待提现收益80%按ETH发放，20%形成ETH GOLD给参与者奖使用。ETH GOLD和ETH按照1：1比例进行兑换，比如收益一个ETH0.8个可以提走，0.2个可以换成ETH GOLD。投注成功、复投成功或推荐一个激活账号，可以增加一次抽取ETH机会，上不封顶。ETH GOLD不能提现，0.5个ETH GOLD可以参与抽奖一次。</span><br>
+                <span>11.伴随者机制：玩家投注额的1%将进入伴随者基金，连续复投（点击“复投”按钮才计为复投）3轮次的玩家被标记为伴随者，每10天为一个轮次。所有伴随者平分伴随者基金，享受每10天一次分红。<br>
+                1、伴随奖池分三个小奖池，V3奖金池占20%，V4奖金池占30%，V5奖金池占50%；<br>
+                2、当玩家分红等级达到V3及以上并连续复投3轮次，可根据玩家分红等级平分相应等级奖金池，如果玩家分红等级低于V3，将不再获取奖金分红。</span><br>
+                <span>12.动态均衡机制：当大量玩家集中涌入时，将会自动开启动态均衡机制，避免集中投注对整体数据的影响，当玩家参与排队时，排队金额不计算分红收益，不计算节点收益，排队金额可以随时提现。</span><br>
+                <span>13.继承者机制：合约为0时，智能合约将从专项账户中拿出ETH奖励给最后30名投注金额的玩家，奖励金额为投注金额的2倍。</span><br>
+<span>14.涅槃机制：如果合约余额为0，将自动启动重启机制，重启时所有人账户都会归0，但是节点关系不变，并且开始新的一轮游戏。
+</span><br>
                 <span>
                     模式亮点<br>
 1.智能合约，100%开源，规则公开，数据透明；<br>
@@ -507,12 +295,11 @@ V5、可享受无限代奖励、一代分红的百分百、二代分红的百分
 </body>
 
 <script src="./js/api.js"></script>
-<script src="./js/jquery.min.js"></script>
-<script src="./vendor/layer.js"></script>
-<script type="text/javascript"
-    src="https://www.jq22.com/demo/clipboard.js-master201703170013/dist/clipboard.min.js"></script>
-<script>
-    var account = '';
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+<script src="https://www.jq22.com/demo/clipboard.js-master201703170013/dist/clipboard.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+     var account = '';
     var net_id = '';
     var receiveAddress = '';
     var identity=localStorage.getItem("identity") || '';
@@ -533,16 +320,6 @@ V5、可享受无限代奖励、一代分红的百分百、二代分红的百分
     $(".aside_mask").click(function () {
         $(".aside").addClass("hide");
     })
-
-
-    // 弹出层分享链接
-    // $(".lianjie").click(function () {
-    //     $(".ceng").removeClass("hide");
-    //     $(".aside").addClass("hide");
-
-    //     // $('.copy').html(invite_code);
-    //     // $(".aside1").removeClass("hide1");
-    // })
     $(".xx").click(function () {
         $(".ceng").addClass("hide");
     })
@@ -666,6 +443,7 @@ V5、可享受无限代奖励、一代分红的百分百、二代分红的百分
             return false;
         }
 
+        console.log(currentPosition);
         if(currentPosition > 30){
             layer_msg("单账户投注额不得超过30ETH.")
             return
@@ -821,16 +599,17 @@ function loginFun(account,invitation_code){
                             $('.inviteAmount').html(req.data.inviteAmount);    //邀请人数
                             $('.comuitityNumber').html(req.data.comuitityNumber);               //网体人数
                             $('.gold').html(req.data.gold);               //以太金币
-                            $('.allEarnings').html(req.data.allEarnings+' ETH');       //总收益
-                            $('.currentPosition').html(req.data.currentPosition+' ETH');       //当前持仓
-                            $('.allStaticAmount').html(req.data.allStaticAmount+' ETH');       //投注分红
-                            $('.allDynamicAmount').html(req.data.allDynamicAmount+' ETH');       //节点收益
-                            $('.unlockAmount').html(req.data.unlockAmount+' ETH');       //静态分红可提现余额
-                            $('.withdrawalAmount').html(req.data.withdrawalAmount+' ETH');       //节点可提现余额
+                            $('.allEarnings').html(req.data.allEarnings);       //总收益
+                            $('.currentPosition').html(req.data.currentPosition);       //当前持仓
+                            $('.allStaticAmount').html(req.data.allStaticAmount);       //投注分红
+                            $('.allDynamicAmount').html(req.data.allDynamicAmount);       //节点收益
+                            $('.unlockAmount').html(req.data.unlockAmount);       //静态分红可提现余额
+                            $('.withdrawalAmount').html(req.data.withdrawalAmount);       //节点可提现余额
                             $('.allBets').html(req.data.allBets);       //所有投资
                             $('.coefficient').html('x'+req.data.coefficient);       //分红倍数
                              $('.supporter').html(req.data.supporter || '0');       //伴随者基金
-                            
+                            $('.hisSupporterAmount').html(req.data.hisSupporterAmount || '0');       //累计基金分红
+
                             if(localStorage.getItem("identity") != identity){
                                 localStorage.setItem("identity", req.data.identity);
                             }
@@ -865,7 +644,7 @@ function loginFun(account,invitation_code){
                     })
                     
                 }
-
 </script>
+
 
 </html>
