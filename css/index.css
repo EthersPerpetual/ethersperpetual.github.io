@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2019-10-19 18:42:20
 * @Last Modified by:   Marte
-* @Last Modified time: 2019-10-20 15:28:41
+* @Last Modified time: 2019-10-21 18:47:12
 */
 * {
             margin: 0;
@@ -30,6 +30,7 @@
 .logo{
     height:400px;
     position:relative;
+    overflow:hidden;
 }
 .yuan-1{
     position:absolute;

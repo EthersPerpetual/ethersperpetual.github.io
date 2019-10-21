@@ -14,12 +14,24 @@
     html {
         font-size: 10px !important;
     }
+    .box4 .btn {
+    margin: 3px 25px 13px;
+}
+.kong {
+    height: 16em;
+}
 }
 
 @media only screen and (max-width:360px) and (min-width:350px) {
     html {
         font-size: 10px !important;
     }
+    .box4 .btn {
+    margin: 3px 25px 13px;
+}
+.kong {
+    height: 16em;
+}
 }
 
 @media only screen and (max-width:480px) and (min-width:360px) {
@@ -97,10 +109,12 @@ a {
     text-decoration: none !important;}
 
 input::-webkit-input-placeholder {
-    color: #999
+    color: #999;
 }
 
-
+  html{
+    overflow-x:hidden;
+  }
 /* 使用webkit内核的浏览器 */
 
 input:-moz-placeholder {

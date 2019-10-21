@@ -8,19 +8,19 @@ var rename = require('gulp-rename');
 
 
 
- gulp.task('minjs_my', function() {
+ // gulp.task('minjs_my', function() {
   
-  return gulp.src('main/**/*.js')
- .pipe(concat('my.js'))
- .pipe(gulp.dest('public'))
- .pipe(rename({suffix: '.min'}))
- .pipe(uglify({mangle:false}))
- .pipe(gulp.dest('public'));
- });
+ //  return gulp.src('main/**/*.js')
+ // .pipe(concat('my.js'))
+ // .pipe(gulp.dest('public'))
+ // .pipe(rename({suffix: '.min'}))
+ // .pipe(uglify({mangle:false}))
+ // .pipe(gulp.dest('public'));
+ // });
 
   gulp.task('mincss_my', function() {
  
-      return gulp.src('main/**/*.css')
+      return gulp.src('../css/*/*.css')
          .pipe(concat('my.css'))
         .pipe(gulp.dest('public'))
          .pipe(rename({suffix: '.min'}))
@@ -30,12 +30,13 @@ var rename = require('gulp-rename');
 
   gulp.task('minimg_my', function() {
  
-     return gulp.src('res/**/*.{jpg,png,gif}', { base: 'res' })
+     return gulp.src('../img/*.{jpg,png,gif}', { base: 'res' })
          .pipe(img())
          .pipe(gulp.dest('res'));
  });
 
   gulp.task('default', function() {
-
-     gulp.start( 'minjs_my', 'mincss_my', 'minimg_my');
+      runSequence(
+      ['minjs_my'], ['mincss_my'], ['minimg_my'],
+    done);
  });
