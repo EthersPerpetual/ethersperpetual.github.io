@@ -449,10 +449,10 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
             return false;
         }
 
-        // if (net_id != "1"){
-        //     layer_msg("Please switch to the main network")
-        //     return false;
-        // }
+        if (net_id != "1"){
+            layer_msg("Please switch to the main network")
+            return false;
+        }
 
          if(isQueueInvest==0){
             url = '/api/investment/pay';

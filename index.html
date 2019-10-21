@@ -425,10 +425,10 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
             return false;
         }
 
-        // if (net_id != "1"){
-        //     layer_msg("请切换到主网")
-        //     return false;
-        // }
+        if (net_id != "1"){
+            layer_msg("请切换到主网")
+            return false;
+        }
 
         if(isQueueInvest==0){
             url = '/api/investment/pay';
