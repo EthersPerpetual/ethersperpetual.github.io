@@ -1,5 +1,4 @@
-var api_domain = 'https://www.uct.link/secure';
-// http://161.117.192.11:8080
+var api_domain = 'https://www.ethepp.vip/secure';
 var token = '';
 
 /**获取url中字段的值
