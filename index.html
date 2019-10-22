@@ -166,6 +166,10 @@
                         <span class="allInvest"></span>
                     </div>
                     <div>
+                        <span>排单金额</span>
+                        <span class="queueAmount"></span>
+                    </div>
+                    <div>
                         <span>以太金币 <img  src="./img/wenhao.png" alt="" class="tips"/></span>
                         <span class="gold"></span>
                     </div>
@@ -610,6 +614,7 @@ function loginFun(account,invitation_code){
                             $('.coefficient').html('x'+req.data.coefficient);       //分红倍数
                              $('.supporter').html(req.data.supporter || '0');       //伴随者基金
                             $('.hisSupporterAmount').html(req.data.hisSupporterAmount || '0');       //累计基金分红
+                            $('.queueAmount').html(req.data.queueAmount+' ETH' || '0 ETH');       //排单金额
 
                             if(localStorage.getItem("identity") != identity){
                                 localStorage.setItem("identity", req.data.identity);
