@@ -297,6 +297,7 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
             </div>
         </div>
     </div>
+    <div class="hide"><span class="allInvestHide"></span></div>
 </body>
 
 <script src="./js/api.js"></script>
@@ -486,7 +487,7 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
 
     //余额提现
     $('#redeem').click(function () {
-        if($('.inviteCode').html()){
+        if($('.allInvestHide').html() != 0){
         loadding();
          postFun('/api/withdrawal/redeem',{},function(req){
             layer.closeAll();
@@ -501,7 +502,7 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
      }
 });
     $('.profit').click(function () {
-        if($('.inviteCode').html()){
+        if($('.allInvestHide').html() != 0){
         loadding();
          postFun('/api/withdrawal/profit',{},function(req){
             layer.closeAll();
@@ -518,7 +519,7 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
     })
 
     $('#futou').click(function () {
-        if($('.inviteCode').html()){
+        if($('.allInvestHide').html() != 0){
         loadding();
          postFun('/api/investment/rePay',{},function(req){
             layer.closeAll();
@@ -555,7 +556,7 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
     $('#chouj').click(function () {
         $(".tit").html('');
         $(".ht").html('');
-        if($('.inviteCode').html()){
+        if($('.allInvestHide').html() != 0){
         loadding();
          postFun('/api/lottery/join ',{},function(req){
             layer.closeAll();
@@ -588,11 +589,11 @@ function loginFun(account,invitation_code){
                     if (req.basic.status == "1") {
                             //请求成功时处理
                             receiveAddress = req.data.receiveAddress
-                            inviteCode = req.data.inviteCode;
+                            invitation_code = req.data.inviteCode;
                             identity = req.data.identity;
                             currentPosition = req.data.currentPosition;
                             isQueueInvest = req.data.isQueueInvest;
-                            $('.Invitation').html(req.data.invitationUrl);  //链接地址
+                           $('.Invitation').html(req.data.invitationUrl);  //链接地址
 
                             $('.inviteCode').html(req.data.inviteCode);     //邀请码
                             $('.staticLevel').html('Lv '+req.data.staticLevel); //分红等级
@@ -601,6 +602,7 @@ function loginFun(account,invitation_code){
                             $('.luckyDrawTime').html(req.data.luckyDrawTime);              //抽奖次数
                             $('.parentCode').html(req.data.parentCode);      //推荐人
                             $('.allInvest').html(req.data.allInvest+' ETH');      //总投资
+                            $('.allInvestHide').html(req.data.allInvest);      //隐藏
                             $('.inviteAmount').html(req.data.inviteAmount);    //邀请人数
                             $('.comuitityNumber').html(req.data.comuitityNumber);               //网体人数
                             $('.gold').html(req.data.gold);               //以太金币

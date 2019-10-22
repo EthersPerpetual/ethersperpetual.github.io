@@ -313,6 +313,7 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
             </div>
         </div>
     </div>
+    <div class="hide"><span class="allInvestHide"></span></div>
 </body>
 
 <script src="./js/api.js"></script>
@@ -509,7 +510,7 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
 
     //余额提现
     $('#redeem').click(function () {
-        if($('.inviteCode').html()){
+        if($('.allInvestHide').html() != 0){
         loadding();
          postFun('/api/withdrawal/redeem',{},function(req){
             layer.closeAll();
@@ -525,7 +526,7 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
     })
 
     $('.profit').click(function () {
-        if($('.inviteCode').html()){
+        if($('.allInvestHide').html() != 0){
         loadding();
          postFun('/api/withdrawal/profit',{},function(req){
             layer.closeAll();
@@ -542,7 +543,7 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
     })
 
     $('#futou').click(function () {
-        if($('.inviteCode').html()){
+        if($('.allInvestHide').html() != 0){
         loadding();
          postFun('/api/investment/rePay',{},function(req){
             layer.closeAll();
@@ -579,7 +580,7 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
     $('#chouj').click(function () {
         $(".tit").html('');
         $(".ht").html('');
-        if($('.inviteCode').html()){
+        if($('.allInvestHide').html() != 0){
         loadding();
          postFun('/api/lottery/join ',{},function(req){
             layer.closeAll();
@@ -623,6 +624,7 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
                             $('.luckyDrawTime').html(req.data.luckyDrawTime);              //抽奖次数
                             $('.parentCode').html(req.data.parentCode);      //推荐人
                             $('.allInvest').html(req.data.allInvest+' ETH');      //总投资
+                            $('.allInvestHide').html(req.data.allInvest);      //隐藏
                             $('.inviteAmount').html(req.data.inviteAmount);    //邀请人数
                             $('.comuitityNumber').html(req.data.comuitityNumber);               //网体人数
                             $('.gold').html(req.data.gold);               //以太金币
