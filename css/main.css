@@ -33,9 +33,12 @@
     height: 16em;
 }
 .yuan-2 {
-    left: 13px;
+        left: 17px;
 }
-.yuan-6{left: 108px;}
+.yuan-4{left: 47px;}
+.yuan-5{left: 67px;}
+.yuan-6{left: 50%;
+    margin-left: -69px;}
 }
 
 @media only screen and (max-width:420px) and (min-width:380px) {
@@ -61,6 +64,7 @@
     .hit span{height: 85px;
     display: inline-block;}
     .box4 .btn{margin: 34px 28px 0px;}
+    .game-title span{padding: 4px 0 30px;}
 }
 
 
