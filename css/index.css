@@ -26,6 +26,8 @@
     height:400px;
     position:relative;
     overflow:hidden;
+    max-width: 375px;
+    margin: 0 auto;
 }
 .yuan-1{
     position:absolute;
