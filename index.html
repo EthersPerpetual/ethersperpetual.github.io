@@ -124,7 +124,7 @@
                         <span ><span class="huang withdrawalAmount"></span> ETH</span>
                     </div>
         </div>
-        <div>
+        <div class="hit">
             <span> <button class="btn profit" >提 现</button></span>
             <span> <button class="btn " id="futou">复 投</button></span>
         </div>
@@ -145,6 +145,10 @@
                     <div>
                         <span>网体人数</span>
                         <span class="comuitityNumber"></span>
+                    </div>
+                    <div>
+                        <span>网体业绩</span>
+                        <span class="comuitityPerformance"></span>
                     </div>
                     <div>
                         <span>分红等级</span>
@@ -613,9 +617,11 @@ function loginFun(account,invitation_code){
                             $('.withdrawalAmount').html(req.data.withdrawalAmount);       //节点可提现余额
                             $('.allBets').html(req.data.allBets);       //所有投资
                             $('.coefficient').html('x'+req.data.coefficient);       //分红倍数
-                             $('.supporter').html(req.data.supporter || '0');       //伴随者基金
+                            $('.supporter').html(req.data.supporter || '0');       //伴随者基金
                             $('.hisSupporterAmount').html(req.data.hisSupporterAmount || '0');       //累计基金分红
                             $('.queueAmount').html(req.data.queueAmount+' ETH' || '0 ETH');       //排单金额
+                            $('.comuitityPerformance').html(req.data.comuitityPerformance+' ETH' || '0 ETH');       //网体业绩
+                            
 
                             if(localStorage.getItem("identity") != identity){
                                 localStorage.setItem("identity", req.data.identity);

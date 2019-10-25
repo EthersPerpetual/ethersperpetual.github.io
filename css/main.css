@@ -55,6 +55,12 @@
             left: 50%;
     margin-left: -70px;
     }
+    .cantent{
+        padding: 65px 0 11px;
+    }
+    .hit span{height: 85px;
+    display: inline-block;}
+    .box4 .btn{margin: 34px 28px 0px;}
 }
 
 
