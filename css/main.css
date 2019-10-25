@@ -38,6 +38,26 @@
 .yuan-6{left: 108px;}
 }
 
+@media only screen and (max-width:420px) and (min-width:380px) {
+    .yuan-2 {
+        left: 50%;
+        margin-left: -165px;
+    }
+    .yuan-3,.yuan-4{
+            left: 50%;
+        margin-left: -140px;
+    }
+    .yuan-5{
+            left: 50%;
+    margin-left: -125px;
+    }
+    .yuan-6{
+            left: 50%;
+    margin-left: -70px;
+    }
+}
+
+
 @media only screen and (max-width:480px) and (min-width:360px) {
     html {
         font-size: 14px !important;
