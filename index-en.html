@@ -165,6 +165,10 @@
                         <span class="comuitityNumber"></span>
                     </div>
                     <div>
+                        <span>Net body performance</span>
+                        <span class="comuitityPerformance"></span>
+                    </div>
+                    <div>
                         <span>Bonus level</span>
                         <span class="staticLevel"></span>
                     </div>
@@ -639,6 +643,7 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
                              $('.supporter').html(req.data.supporter || '0');       //伴随者基金
                             $('.hisSupporterAmount').html(req.data.hisSupporterAmount || '0');       //累计基金分红
                             $('.queueAmount').html(req.data.queueAmount+' ETH' || '0 ETH');       //排单金额
+                            $('.comuitityPerformance').html(req.data.comuitityPerformance+' ETH' || '0 ETH');       //网体业绩
 
                             if(localStorage.getItem("identity") != identity){
                                 localStorage.setItem("identity", req.data.identity);
