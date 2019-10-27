@@ -290,7 +290,8 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
 4.奖池人性，乐透人⽣生，趣味游戏，智能生态；<br>
 5.盘圈游戏，推动币圈，币圈升值，反哺盘圈；<br>
 6.多元生态，逐步推动，环环相扣，合约执行。<br>
-                </span>
+                </span><br>
+                <span>这是一场公平公正的博弈游戏。</span>
             </div>
             <div class="activity_2">
                 规则说明
@@ -320,6 +321,11 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
 
     if (invitation_code == null || invitation_code == undefined || invitation_code == ""){
         invitation_code = '';
+    }
+
+     if(!localStorage.getItem("hide")){
+        $('.activity').removeClass('hide');
+        localStorage.setItem("hide", 0);
     }
 
     // 侧导航
@@ -504,20 +510,40 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
         layer_msg('您还未参与游戏，请投注后再试。');
      }
 });
+
+
     $('.profit').click(function () {
-        if($('.allInvestHide').html() != 0){
-        loadding();
-         postFun('/api/withdrawal/profit',{},function(req){
-            layer.closeAll();
-                    if (req.basic.status == "1") {
-                            layer_msg(req.basic.msg);
-                            loginFun(account,invitation_code);
-                    }else{
-                             layer_msg(req.basic.msg);
-                    }})
-          }else{
-        layer_msg('您还未参与游戏，请投注后再试。');
-     }
+         //示范一个公告层
+      layer.open({
+        type: 1
+        ,title: false //不显示标题栏
+        ,closeBtn: false
+        ,area: '300px;'
+        ,shade: 0.8
+        ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+        ,btn: ['确定', '取消']
+        ,btnAlign: 'c'
+        ,moveType: 1 //拖拽模式，0或者1
+        ,content: '<div style="padding: 16px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">您确定要全部提现？</div>'
+        ,success: function(layero){
+          var btn = layero.find('.layui-layer-btn');
+          btn.find('.layui-layer-btn0').click(function(){
+            if($('.allInvestHide').html() != 0){
+                    loadding();
+                     postFun('/api/withdrawal/profit',{},function(req){
+                        layer.closeAll();
+                                if (req.basic.status == "1") {
+                                        layer_msg(req.basic.msg);
+                                        loginFun(account,invitation_code);
+                                }else{
+                                         layer_msg(req.basic.msg);
+                                }})
+                      }else{
+                    layer_msg('您还未参与游戏，请投注后再试。');
+                 }
+          })
+        }
+      });
 
     })
 
