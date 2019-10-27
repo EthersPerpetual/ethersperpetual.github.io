@@ -9,27 +9,44 @@
     <title>Ethers Perpetual</title>
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/iconfont/iconfont.css">
     <style>
         body {
             width: 100%;
             background: url('./img/bg.png') no-repeat 100% top,#0a0522;
             background-size: 100% auto;
             color: white;
-                overflow-x: hidden;
+            overflow-x: hidden;
         }
-
-        
+        .txt{
+            height: 320px;
+                width: 82%;
+                    padding: 30px 15px 0;
+                    letter-spacing: 0px;
+        }
+        .box5 .cantent>div>span:nth-of-type(2){width: 20%;}
+        .box5 .cantent>div>span:nth-of-type(1) {
+    width: 82%;
+}
+.box4 .cantent>div>span:nth-of-type(1){
+    line-height: 16px;
+}
+.box4 .cantent>div{padding: 5px 0;}
+.btn-1{    width: 100px;}
+.box4{background-size: 100% 100%;}
+.rulee>div:nth-of-type(1){margin-top: 128px;}
     </style>
+
 </head>
 
 <body>
-    <div class="box1">
+<div class="box1">
         <div class="heard">
              <img class="caidan" src="./img/cd.png" alt="" id="icon_aside">
              <span style="font-size: 16px;">Ethers Perpetual</span>
              <img  src="./img/wenhao.png" alt="" id="guize" class="guize" >   
         </div>
-        <a href="index-en.html" style="position: absolute;right: 8px;z-index: 9;"><img class="guoqi" src="./img/guoqi-en.png" alt="" width="30"></a>
+         <a href="index.html" style="position: absolute;right: 8px;z-index: 9;"><img class="guoqi" src="./img/guoqi.png" alt="" width="30"></a>
         <div class="logo">
             <img src="./img/yuan-1.png" alt="" class="yuan-1"/>
             <img src="./img/yuan-2.png" alt="" class="yuan-2"/>
@@ -44,20 +61,20 @@
     <div class="kong">&nbsp;</div>
 
     <div class="box2">
-        <div class="title">项目介绍</div>
+        <div class="title">Introduce</div>
         <div class="txt">
-            EPP以太永恒(Eth Perpetual)是全球第一家基于自己公有链搭建智能合约的、全范围内实时交易的支付平台，平台使用智能合约的结算机制来构建低成本的支付体系，帮助合规的双方达成自动化交易。以太永恒也将掀起数字经济的全新改革，顶尖的开发团队奠定了EPP成功的基础。
+            EPP Ethernet is the world's first payment platform for real-time transactions in a full range based on its own public chain to build smart contracts. The platform uses the settlement mechanism of smart contracts to build a low-cost payment system, helping compliant parties to achieve automated transactions. Ethereum will also set off a new reform of the digital economy, and the top development team has laid the foundation for the success of EPP.
         </div>
     </div>
 
-    <div class="box3">
+<div class="box3">
         <div class="game-title">
-            <h1>公平博弈游戏</h1>
-            <span>规则简单 · 数据公开透明 · 代码开源</span>
+            <h1>Fair game</h1>
+            <span>Simple, transparent and open source</span>
         </div>
         <div class="game-box">
-            <h2>所有投资：<span class="allBets"></span> ETH</h2>
-            <h2>伴随者基金：<span class="supporter"></span> ETH</h2>
+            <h2>All investments：<span class="allBets"></span> ETH</h2>
+            <h2>Companion fund：<span class="supporter"></span> ETH</h2>
             <div class="box-1">
                 <div class="back5">
                     <div class="back5_1">
@@ -82,116 +99,116 @@
                 </div>
                 <!-- 投注 -->
                 <div class="touzhu" id="button">
-                    <span class="tz">投 注</span>
-                    <span class="pd">排 单</span>
+                    <span class="tz">Betting</span>
+                    <span class="pd">line up</span>
                 </div>
                 
-                <div class="fenh">今日分红倍数：<span class="coefficient"></span></div>
+                <div class="fenh">Today's dividend multiplier：<span class="coefficient"></span></div>
 
             </div>
         </div>
-    </div>    
+    </div>  
 
-    <div class="box4">
-        <h3>我 的 收 益</h3>
+   
+   <div class="box4">
+        <h3>My income</h3>
         <div class="cantent">
-            <div>
-                        <span>总收益</span>
-                        <span ><span class="huang allEarnings"></span> ETH</span>
+                    <div>
+                        <span>Total revenue</span>
+                         <span ><span class="huang allEarnings"></span> ETH</span>
                     </div>
                     <div>
-                        <span>当前持仓</span>
+                        <span>Current position </span>
                         <span ><span class="huang currentPosition"></span> ETH</span>
                     </div>
                     <div>
-                        <span>可提现数量</span>
+                        <span>Cashable Quantity</span>
                         <span ><span class="huang unlockAmount"></span> ETH</span>
                     </div>
                     <div>
-                        <span>累计投注分红</span>
+                        <span>Accumulated betting dividend</span>
                         <span ><span class="huang allStaticAmount"></span> ETH</span>
                     </div>
                      <div>
-                        <span>累计节点收益</span>
+                        <span>Accumulated Node Benefits</span>
                         <span ><span class="huang allDynamicAmount"></span> ETH</span>
                     </div>
                     <div>
-                        <span>累计基金分红</span>
+                        <span>Accumulated fund dividend</span>
                         <span ><span class="huang hisSupporterAmount"></span> ETH</span>
                     </div>
                     <div>
-                        <span>待提现收益</span>
-                        <span ><span class="huang withdrawalAmount"></span> ETH</span>
+                        <span>Receivable earnings</span>
+                            <span ><span class="huang withdrawalAmount"></span> ETH</span>
                     </div>
         </div>
         <div class="hit">
-            <span> <button class="btn profit" >提 现</button></span>
-            <span> <button class="btn " id="futou">复 投</button></span>
+            <span> <button class="btn profit" >Withdraw</button></span>
+            <span> <button class="btn " id="futou">Redelivery </button></span>
         </div>
     </div>
 
-    <div class="title">数据统计</div>
+    <div class="title">Statistics</div>
     <div class="box5">
         
             <div class="cantent">
                     <div>
-                        <span>邀请码</span>
+                        <span>Invitation code</span>
                         <span class="inviteCode"></span>
                     </div>
                      <div>
-                        <span>邀请人数</span>
+                        <span>Number of invitations</span>
                         <span class="inviteAmount"></span>
                     </div>
                     <div>
-                        <span>网体人数</span>
+                        <span>Mesh size</span>
                         <span class="comuitityNumber"></span>
                     </div>
                     <div>
-                        <span>网体业绩</span>
+                        <span>Net body performance</span>
                         <span class="comuitityPerformance"></span>
                     </div>
                     <div>
-                        <span>分红等级</span>
+                        <span>Bonus level</span>
                         <span class="staticLevel"></span>
                     </div>
                     <div>
-                        <span>节点等级</span>
+                        <span>Node level</span>
                         <span class="dynamicLevel"></span>
                     </div>
              </div>
              <div class="cantent">
                      <div>
-                        <span>推荐人</span>
+                        <span>Recommender</span>
                         <span class="parentCode"></span>
                     </div>
                     <div>
-                        <span>总投资</span>
+                        <span>Total assets</span>
                         <span class="allInvest"></span>
                     </div>
                     <div>
-                        <span>排单金额</span>
+                        <span>Order amount</span>
                         <span class="queueAmount"></span>
                     </div>
                     <div>
-                        <span>以太金币 <img  src="./img/wenhao.png" alt="" class="tips"/></span>
+                        <span>Ether gold <img  src="./img/wenhao.png" alt="" class="tips"/></span>
                         <span class="gold"></span>
                     </div>
                     <div>
-                        <span>抽奖次数</span>
+                        <span>Lucky draw times</span>
                         <span class="luckyDrawTime"></span>
-                        <span class="btn-1" id="chouj">抽奖</span>
+                        <span class="btn-1" id="chouj">Luck draw</span>
                     </div>
                     <div>
-                        <span>复投次数</span>
+                        <span>Repetition Number</span>
                         <span class="reInvestCount"></span>
-                        <span class="btn-1" id="redeem">赎回</span>
+                        <span class="btn-1" id="redeem">Redeem</span>
                     </div>
-             <button id="copy_button" class="copylianjie">复制邀请链接</button>
+             <button id="copy_button" class="copylianjie">Copy Invitation Links</button>
     </div>
     </div>
 
-
-<!-- 侧导航 -->
+    <!-- 侧导航 -->
     <aside class="aside hide">
         <div class="aside_mask"></div>
         <section class="aside_box">
@@ -202,44 +219,44 @@
                         <span class="iconfont font24 fonta9">
                             <img src="img/1.png" alt="">
                         </span>
-                        <a href="index.html">
-                            <span class="fontc_f red_box">首页</span>
+                        <a href="index-en.html">
+                            <span class="fontc_f red_box">Home</span>
                             <span class="iconfont icon-gengduo font20 fontc_f"></span>
                         </a>
                     </div>
-                   
-                    <div class="userinfo_item">
+                   <div class="userinfo_item">
                         <span class="iconfont font24 fonta9"><img src="img/5.png" alt=""></span>
-                        <a href="LuckDraw.html">
-                            <span class="fontc_f ">抽奖记录</span>
+                        <a href="LuckDraw-en.html">
+                            <span class="fontc_f ">Lucky draw</span>
                             <span class="iconfont icon-gengduo font20 fontc_f"></span>
                         </a>
                     </div>
                     <div class="userinfo_item">
                         <span class="iconfont font24 fonta9"><img src="img/4.png" alt=""></span>
-                        <a href="Investment.html">
-                            <span class="fontc_f ">投资记录</span>
+                        <a href="Investment-en.html">
+                            <span class="fontc_f ">Investment record</span>
                             <span class="iconfont icon-gengduo font20 fontc_f"></span>
                         </a>
                     </div>
                     <div class="userinfo_item">
                             <span class="iconfont font24 fonta9"><img src="img/3.png" alt=""></span>
-                            <a href="tixian_list.html">
-                                <span class="fontc_f ">提现列表</span>
+                            <a href="tixian_list-en.html">
+                                <span class="fontc_f ">List of withdrawals</span>
                                 <span class="iconfont icon-gengduo font20 fontc_f"></span>
                             </a>
                     </div>
+                    
                     <div class="userinfo_item">
                         <span class="iconfont font24 fonta9"><img src="img/6.png" alt=""></span>
-                        <a href="platoon.html">
-                            <span class="fontc_f ">排单列表</span>
+                        <a href="platoon-en.html">
+                            <span class="fontc_f ">List of orders</span>
                             <span class="iconfont icon-gengduo font20 fontc_f"></span>
                         </a>
                     </div>
                     <div class="userinfo_item">
                         <span class="iconfont font24 fonta9"><img src="img/7.png" alt=""></span>
-                        <a href="Bonus-list.html">
-                            <span class="fontc_f ">分红名单</span>
+                        <a href="Bonus-list-en.html">
+                            <span class="fontc_f ">Bonus list</span>
                             <span class="iconfont icon-gengduo font20 fontc_f"></span>
                         </a>
                     </div>
@@ -250,51 +267,51 @@
 
     <!-- 弹出层分享链接 -->
     <div class="ceng hide">
-        <div class="rulee">
+       <div class="rulee">
             <div class="tit"></div>
             <div class="ht"></div>
-            <div class="gb xx">知道了</div>
+            <div class="gb xx">Got it</div>
         </div>
     </div>
     <!-- 活动规则 -->
     <div class="activity hide">
         <div class="activity_1">
             <div>
-                <span>1. 投注金额：1-30ETH,金额必须为整数，单账户最大限额投资30个ETH，解冻后可以复投。</span><br>
-                <span>2. 您投注时候的整时10天后本金解冻，解冻后不计算分红、节点奖励正常计算，可以随时提现，提现后不计算节点奖励。若重新加入之前业绩清零层级关系不变，按新增业绩重新计算节点分红。</span><br>
-                <span>3.会员等级为V1-V5，V1:  1-5ETH、V2: 6-10ETH、V3；11-15ETH、V4：16-20ETH、V5：21-30ETH。</span><br>
-                <span>4.投注分红：V1每日分红0.7%、V2每日分红0.9%、V3每日分红1.1%、V4每日分红1.2%、V5每日分红1.3%。</span><br>
-                <span> 5.节点奖励：直推一个拿1代，直推两个拿2代，直推三个拿3代，直推四个拿4代，直推10个拿无限代。<br/>
-                V1：获得1代每日分红的20%；<br/>
- V2：获得1代每日分红的20%、2代的20%；<br/>
-V3：获得1代每日分红的20%、2代的20%、3代的20%；<br/>
-V4：获得1代每日分红的20%、2代的20%、3代的20%、4代的10%；<br/>
-V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、4代的10%、5到10代的7%、11代到20代的3%、21代以后的1%。</span><br>
-                <span>6.奖励烧伤：自己账户投注金额小于推荐好友投注额时，节点奖励以自己账户金额为基础计算，自己账户金额大于等于推荐好友的投注额时，节点奖励以推荐好友的投注金额为基础计算。另外节点奖励需要乘以节点等级系数，V1为30%，V2为50%，V3为70%，V4为80%，V5为100%，例如：A推荐B，A投注5ETH，B投注30ETH，则A每日得到的奖金为（5*1/100）*20%*30%。</span><br>
-                <span>7.总体投资额的6%会自动划拨到专项账户，其中2%会用于生态建设，2%用于应用开发，2%用于市场推广。</span><br>
-                <span>8.分红及节点奖励由智能合约自动计算，每日北京时间0点自动结算，结算后玩家可以随时提现，全部由智能合约代码执行，没有任何人可以控制。</span><br>
-                <span>9.冒险家机制：智能合约会通过bancor协议自动评估每天投注的风险值，风险越高。每日分红以及对应的节点奖励越高，每日分红最低为上文描述的基础比例，最高为基础比例的三倍。</span><br>
-                <span>10.幸运者机制：玩家提现时，其中待提现收益80%按ETH发放，20%形成ETH GOLD给参与者奖使用。ETH GOLD和ETH按照1：1比例进行兑换，比如收益一个ETH0.8个可以提走，0.2个可以换成ETH GOLD。投注成功、复投成功或推荐一个激活账号，可以增加一次抽取ETH机会，上不封顶。ETH GOLD不能提现，0.5个ETH GOLD可以参与抽奖一次。</span><br>
-                <span>11.伴随者机制：玩家投注额的1%将进入伴随者基金，连续复投（点击“复投”按钮才计为复投）3轮次的玩家被标记为伴随者，每10天为一个轮次。所有伴随者平分伴随者基金，享受每10天一次分红。<br>
-                1、伴随奖池分三个小奖池，V3奖金池占20%，V4奖金池占30%，V5奖金池占50%；<br>
-                2、当玩家分红等级达到V3及以上并连续复投3轮次，可根据玩家分红等级平分相应等级奖金池，如果玩家分红等级低于V3，将不再获取奖金分红。</span><br>
-                <span>12.动态均衡机制：当大量玩家集中涌入时，将会自动开启动态均衡机制，避免集中投注对整体数据的影响，当玩家参与排队时，排队金额不计算分红收益，不计算节点收益，排队金额可以随时提现。</span><br>
-                <span>13.继承者机制：合约为0时，智能合约将从专项账户中拿出ETH奖励给最后30名投注金额的玩家，奖励金额为投注金额的2倍。</span><br>
-<span>14.涅槃机制：如果合约余额为0，将自动启动重启机制，重启时所有人账户都会归0，但是节点关系不变，并且开始新的一轮游戏。
+                <span>1. Bet amount: 1-30eth, the amount must be an integer, the maximum investment limit of a single account is 30 eth, and can be re invested after unfreezing.</span><br>
+                <span>2. The principal will be unfrozen 10 days after the whole time of your bet. After unfreezing, no dividend will be calculated and node rewards will be calculated normally. You can withdraw at any time and no node rewards will be calculated after withdrawing. If the hierarchical relationship of performance reset remains unchanged before rejoining, the node dividend will be recalculated according to the new performance.</span><br>
+                <span>3.Membership level is v1-v5, V1: 1-5eth, V2: 6-10eth, V3; 11-15eth, V4: 16-20eth, V5: 21-30eth.</span><br>
+                <span>4.Dividend: 0.7% for V1, 0.9% for V2, 1.1% for V3, 1.2% for V4 and 1.3% for V5.</span><br>
+                <span> 5. Node reward: one generation for direct push, two generation for direct push, three generation for direct push, four generation for direct push, and 10 generation for unlimited push. <br/>
+                V1: get 20% of the daily dividend of generation 1;<br/>
+V2: 20% of the daily dividend of the first generation and 20% of the second generation;<br/>
+V3: 20% of the daily dividend of the first generation, 20% of the second generation and 20% of the third generation;<br/>
+V4: get 20% of the daily dividend of the first generation, 20% of the second generation, 20% of the third generation and 10% of the fourth generation;<br/>
+V5: get unlimited generation rewards, 20% of the daily dividend of the first generation, 20% of the second generation, 20% of the third generation, 10% of the fourth generation, 7% of the fifth to the tenth generation, 3% of the 11th to the 20th generation, and 1% after the 21st generation.</span><br>
+                <span>6. Reward burn: when the bet amount of your account is less than the recommended friend's bet amount, the node reward is calculated based on your account amount. When the bet amount of your account is greater than or equal to the recommended friend's bet amount, the node reward is calculated based on the recommended friend's bet amount. In addition, the node reward needs to be multiplied by the node level coefficient. V1 is 30%, V2 is 50%, V3 is 70%, V4 is 80%, and V5 is 100%. For example, if a recommends B, a bet 5eth, and B bet 30eth, then a gets a daily bonus of (5 * 1 / 100) * 20% * 30%.</span><br>
+                <span>7. 6% of the total investment will be automatically transferred to the special account, of which 2% will be used for ecological construction, 2% for application development and 2% for market promotion.</span><br>
+                <span>8. Dividends and node rewards are calculated automatically by the smart contract, and settled automatically at 0:00 Beijing time every day. After settlement, players can withdraw cash at any time, all of which are executed by the smart contract code, and no one can control it.</span><br>
+                <span>9. Adventurer mechanism: the smart contract will automatically evaluate the risk value of daily bet through Bancor protocol, and the higher the risk is. The higher the daily bonus and the corresponding node bonus, the minimum daily bonus is the basic proportion described above, and the maximum is three times of the basic proportion.</span><br>
+                <span>10. Lucky person mechanism: 80% of the profits to be withdrawn will be distributed according to eth, and 20% will form eth gold to reward participants. Eth gold and eth are exchanged at a ratio of 1:1. For example, one eth 0.8 earnings can be withdrawn and 0.2 earnings can be exchanged into eth gold. If the bet is successful, the re investment is successful, or an activated account is recommended, the chance to extract eth can be increased once, without capping. Eth gold cannot withdraw cash. 0.5 eth gold can participate in the lottery once.</span><br>
+                <span>11. Accompanier mechanism: 1% of the player's bet will enter the accompanier fund. Players who make three rounds of continuous re investment (click the "re investment" button to count as re investment) will be marked as accompaniers, one round every 10 days. All accompanies share the fund equally and enjoy a dividend every 10 days.<br>
+                1. There are three small reward pools, with V3 prize pool accounting for 20%, V4 prize pool accounting for 30%, and V5 prize pool accounting for 50%.<br>
+                2. When the player's bonus level reaches V3 or above and has been re invested for 3 consecutive rounds, the bonus pool of corresponding level can be divided equally according to the player's bonus level. If the player's bonus level is lower than V3, no bonus bonus will be obtained.</span><br>
+                <span>12. Dynamic equilibrium mechanism: when a large number of players rush in, the dynamic equilibrium mechanism will be automatically opened to avoid the impact of centralized betting on the overall data. When players participate in the queue, the queue amount does not calculate the dividend income, does not calculate the node income, and the queue amount can be withdrawn at any time.</span><br>
+                <span>13. Successor mechanism: when the contract is 0, the smart contract will take out eth from the special account to reward the last 30 players with the bet amount, which is twice of the bet amount.</span><br>
+<span>14. Nirvana mechanism: if the contract balance is 0, the restart mechanism will be started automatically. When restarting, everyone's account will return to 0, but the node relationship will not change, and a new round of game will start.
 </span><br>
                 <span>
-                    模式亮点<br>
-1.智能合约，100%开源，规则公开，数据透明；<br>
-2.动静结合，奖励多样化，强力奖励大贡献者；<br>
-3.长远设计，稳定合理理，盘币互通，互推互益；<br>
-4.奖池人性，乐透人⽣生，趣味游戏，智能生态；<br>
-5.盘圈游戏，推动币圈，币圈升值，反哺盘圈；<br>
-6.多元生态，逐步推动，环环相扣，合约执行。<br>
+                    Pattern highlights<br>
+1.Intelligent contract, 100% open source, open rules, transparent data；<br>
+2.Combining static and dynamic, rewarding diversification, and rewarding great contributors by strength；<br>
+3.Long-term design, stability and rationality, currency exchange, mutual benefit；<br>
+4.Prize pool human nature, lottery life, fun games, intelligent ecology；<br>
+5.Circle game, promote currency circle, currency circle appreciation, feed back the circle；<br>
+6.Diversified ecology, progressive promotion, interlocking, contract enforcement。<br>
                 </span><br>
-                <span>这是一场公平公正的博弈游戏。</span>
+                <span>This is a fair and just game.</span>
             </div>
             <div class="activity_2">
-                规则说明
+                Rule description
             </div>
             <div class="activity_3">
                 X
@@ -308,22 +325,21 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
 <script src="https://www.jq22.com/demo/clipboard.js-master201703170013/dist/clipboard.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-     var account = '';
+<script>
+    var account = '';
     var net_id = '';
     var receiveAddress = '';
     var identity=localStorage.getItem("identity") || '';
     var invitation_code = get_param("invite_code");
     var currentPosition = '';
     var isQueueInvest = '';
-
-    localStorage.setItem("language", "chinese");
+    localStorage.setItem("language", "english");
 
     if (invitation_code == null || invitation_code == undefined || invitation_code == ""){
         invitation_code = '';
     }
 
-     if(!localStorage.getItem("hide")){
+    if(!localStorage.getItem("hide")){
         $('.activity').removeClass('hide');
         localStorage.setItem("hide", 0);
     }
@@ -335,6 +351,16 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
     $(".aside_mask").click(function () {
         $(".aside").addClass("hide");
     })
+
+
+    // 弹出层分享链接
+    // $(".lianjie").click(function () {
+    //     $(".ceng").removeClass("hide");
+    //     $(".aside").addClass("hide");
+
+    //     // $('.copy').html(invite_code);
+    //     // $(".aside1").removeClass("hide1");
+    // })
     $(".xx").click(function () {
         $(".ceng").addClass("hide");
     })
@@ -370,8 +396,7 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
     })
 
 
-
-    // 链接插件
+   // 链接插件
     window.addEventListener('load', async () => {
         // Modern dapp browsers... 现代DAPP浏览器…
         
@@ -409,14 +434,13 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
 
                 // 账户账号
                 account = web3.eth.accounts[0];
+
                 loginFun(account,invitation_code);
 
                 
                 
             } catch (error) {
                 // User denied account access... 用户拒绝帐户访问…
-                // console.log(error)
-                layer_msg(error.message);
             }
         }
         // Legacy dapp browsers... 传统的DAPP浏览器…
@@ -427,25 +451,26 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
         }
         // Non-dapp browsers... 非DAPP浏览器…
         else {
-            $('.Tip').html('检测到非以太坊浏览器. 请先安装 MetaMask!');
+            $('.Tip').html('Non-ethernet browser detected. Please install MetaMask first!');
             // alert('检测到非以太坊浏览器. 你应该考虑试试安装 MetaMask!');
         }
     });
 
+
     // 投资
     $("#button").click(function () {
-        var url = '';
+
         if (identity == "" || identity == undefined || identity == null){
-            layer_msg("请刷新重试")
+            layer_msg("Please refresh and retry")
             return false;
         }
 
         if (net_id != "1"){
-            layer_msg("请切换到主网")
+            layer_msg("Please switch to the main network")
             return false;
         }
 
-        if(isQueueInvest==0){
+         if(isQueueInvest==0){
             url = '/api/investment/pay';
         }else{
             url = '/api/investment/queue';
@@ -454,13 +479,12 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
         var value = parseInt($('.shu').text())
         if (value < 1) {
             //提示
-            layer_msg("数字错误")
+            layer_msg("Digital error")
             return false;
         }
 
-        console.log(currentPosition);
         if(currentPosition > 30){
-            layer_msg("单账户投注额不得超过30ETH.")
+            layer_msg("The amount of single account investment shall not exceed 30ETH.")
             return
         }
 
@@ -472,23 +496,23 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
             value: zhuanzhang
         }, function callback(err, hash) {
             if (err == null) {
-                postFun(url,{
+                     postFun('/api/investment/pay',{
                         amount:""+value,
                         hash: hash
                     },function(req){
                         layer.closeAll();
                     if (req.basic.status == "1") {
-                            layer_msg("参与成功");
+                            layer_msg("Participation in success");
 
                             loginFun(account,invitation_code);
                     }else{
                              layer_msg(req.basic.msg);
                     }})
 
+
             } else {
-                layer.closeAll();
                 //错误提示
-                layer_msg("请重试")
+                layer_msg("Please try again.")
             }
         });
     })
@@ -507,24 +531,22 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
                              layer_msg(req.basic.msg);
                     }})
          }else{
-        layer_msg('您还未参与游戏，请投注后再试。');
+        layer_msg('You are not in the game yet. Please bet and try again!');
      }
-});
-
+    })
 
     $('.profit').click(function () {
-         //示范一个公告层
-      layer.open({
+         layer.open({
         type: 1
         ,title: false //不显示标题栏
         ,closeBtn: false
         ,area: '300px;'
         ,shade: 0.8
         ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
-        ,btn: ['确定', '取消']
+        ,btn: ['Yes', 'No']
         ,btnAlign: 'c'
         ,moveType: 1 //拖拽模式，0或者1
-        ,content: '<div style="padding: 16px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">您确定要全部提现？</div>'
+        ,content: '<div style="padding: 16px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">Are you sure you want to withdraw all your money?</div>'
         ,success: function(layero){
           var btn = layero.find('.layui-layer-btn');
           btn.find('.layui-layer-btn0').click(function(){
@@ -539,7 +561,7 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
                                          layer_msg(req.basic.msg);
                                 }})
                       }else{
-                    layer_msg('您还未参与游戏，请投注后再试。');
+                    layer_msg('You are not in the game yet. Please bet and try again!');
                  }
           })
         }
@@ -558,15 +580,15 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
                     }else{
                              layer_msg(req.basic.msg);
                     }})
-     }else{
-        layer_msg('您还未参与游戏，请投注后再试。');
+          }else{
+        layer_msg('You are not in the game yet. Please bet and try again!');
      }
 
     })
 
      $('.guoqi').click(function () {
 
-        localStorage.setItem("language","english");
+        localStorage.setItem("language","chinese");
 
     })
 
@@ -575,7 +597,7 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
           type: 1,
           shade: false,
           title: false, //不显示标题
-          content: '每年圣诞节，以太永恒将举行盛大的以太金币夺宝活动，玩家可以用以太金币夺取ETH高额大奖，更有机会获得以太永恒通行证，成为以太永恒生态的永久网体矩阵成员，获得令人惊叹的专属福利。', //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+          content: 'Every Christmas, the ether will always hold the grand gold medal of the ether coin. Players can win the ETH high prize with the gold coin of the ether, and have the chance to obtain the eternal pass of ether, and become the permanent net body member of the eternal ecology of the ether.On Christmas Eve, the ether will always hold a grand gold coin winning event. Players can win the ETH high prize with the gold coin of the ether, and have the chance to obtain the eternal pass of ether, and become the permanent net body member of the eternal ecology of the ether.', //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
           cancel: function(){
             layer.closeAll();
           }
@@ -593,10 +615,10 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
                  $(".ceng").removeClass("hide");
                 $(".aside").addClass("hide");
                 if(req.data.prize.prizeValue==0){
-                    $(".tit").html('谢谢惠顾!');
+                    $(".tit").html('Thank you for your patronage!');
                 }else{
-                    $(".tit").html('恭喜您中奖了!');
-                    $(".ht").html('您获得了'+ req.data.prize.prizeValue +'ETH，已放入您的钱包，请注意查收。');
+                    $(".tit").html('Congratulations on your winning!');
+                    $(".ht").html('You got it'+ req.data.prize.prizeValue +'ETH，Your wallet has been put in. Please check it carefully.');
                 }
                 loginFun(account,invitation_code);
             }else{
@@ -604,20 +626,18 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
                      loginFun(account,invitation_code);
             }})
          }else{
-        layer_msg('您还未参与游戏，请投注后再试。');
+        layer_msg('You are not in the game yet. Please bet and try again!');
      }
          
     })
 
-function loginFun(account,invitation_code){
-    localStorage.setItem("language", "chinese");
+    function loginFun(account,invitation_code){
                     postFun('/api/login',{
                         address: account,
                         invitationCode: invitation_code
                     },function(req){
                     if (req.basic.status == "1") {
-                            //请求成功时处理
-                            receiveAddress = req.data.receiveAddress
+                             receiveAddress = req.data.receiveAddress
                             invitation_code = req.data.inviteCode;
                             identity = req.data.identity;
                             currentPosition = req.data.currentPosition;
@@ -643,22 +663,20 @@ function loginFun(account,invitation_code){
                             $('.withdrawalAmount').html(req.data.withdrawalAmount);       //节点可提现余额
                             $('.allBets').html(req.data.allBets);       //所有投资
                             $('.coefficient').html('x'+req.data.coefficient);       //分红倍数
-                            $('.supporter').html(req.data.supporter || '0');       //伴随者基金
+                             $('.supporter').html(req.data.supporter || '0');       //伴随者基金
                             $('.hisSupporterAmount').html(req.data.hisSupporterAmount || '0');       //累计基金分红
                             $('.queueAmount').html(req.data.queueAmount+' ETH' || '0 ETH');       //排单金额
                             $('.comuitityPerformance').html(req.data.comuitityPerformance+' ETH' || '0 ETH');       //网体业绩
-                            
 
                             if(localStorage.getItem("identity") != identity){
                                 localStorage.setItem("identity", req.data.identity);
-                            }
+                            }         
 
-                            if(req.data.isQueueInvest==0){
+                             if(req.data.isQueueInvest==0){
                                 $(".tz").show();
                             }else{
                                 $(".pd").show();
-                            }
-
+                            }                                      
                             // 邀请好友
                             $("#copy_button").click(function () {
                                 // 复制链接
@@ -669,10 +687,10 @@ function loginFun(account,invitation_code){
                                     }
                                 });
                                 clipboard.on('success', function (e) {
-                                    layer_msg("复制成功");
+                                    layer_msg("Replication success ");
                                 });
                                 clipboard.on('error', function (e) {
-                                    layer_msg("复制失败");
+                                    layer_msg("copy failed");
                                 });
                             })
 
@@ -681,9 +699,8 @@ function loginFun(account,invitation_code){
                     }
                          
                     })
-                    
+
                 }
 </script>
-
 
 </html>
