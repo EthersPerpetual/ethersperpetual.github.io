@@ -307,7 +307,8 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
 4.Prize pool human nature, lottery life, fun games, intelligent ecology；<br>
 5.Circle game, promote currency circle, currency circle appreciation, feed back the circle；<br>
 6.Diversified ecology, progressive promotion, interlocking, contract enforcement。<br>
-                </span>
+                </span><br>
+                <span>This is a fair and just game.</span>
             </div>
             <div class="activity_2">
                 Rule description
@@ -336,6 +337,11 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
 
     if (invitation_code == null || invitation_code == undefined || invitation_code == ""){
         invitation_code = '';
+    }
+
+    if(!localStorage.getItem("hide")){
+        $('.activity').removeClass('hide');
+        localStorage.setItem("hide", 0);
     }
 
     // 侧导航
@@ -530,19 +536,36 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
     })
 
     $('.profit').click(function () {
-        if($('.allInvestHide').html() != 0){
-        loadding();
-         postFun('/api/withdrawal/profit',{},function(req){
-            layer.closeAll();
-                    if (req.basic.status == "1") {
-                            layer_msg(req.basic.msg);
-                            loginFun(account,invitation_code);
-                    }else{
-                             layer_msg(req.basic.msg);
-                    }})
-         }else{
-        layer_msg('You are not in the game yet. Please bet and try again!');
-     }
+         layer.open({
+        type: 1
+        ,title: false //不显示标题栏
+        ,closeBtn: false
+        ,area: '300px;'
+        ,shade: 0.8
+        ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+        ,btn: ['Yes', 'No']
+        ,btnAlign: 'c'
+        ,moveType: 1 //拖拽模式，0或者1
+        ,content: '<div style="padding: 16px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">Are you sure you want to withdraw all your money?</div>'
+        ,success: function(layero){
+          var btn = layero.find('.layui-layer-btn');
+          btn.find('.layui-layer-btn0').click(function(){
+            if($('.allInvestHide').html() != 0){
+                    loadding();
+                     postFun('/api/withdrawal/profit',{},function(req){
+                        layer.closeAll();
+                                if (req.basic.status == "1") {
+                                        layer_msg(req.basic.msg);
+                                        loginFun(account,invitation_code);
+                                }else{
+                                         layer_msg(req.basic.msg);
+                                }})
+                      }else{
+                    layer_msg('You are not in the game yet. Please bet and try again!');
+                 }
+          })
+        }
+      });
 
     })
 
