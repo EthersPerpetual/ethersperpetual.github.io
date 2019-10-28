@@ -206,6 +206,7 @@
                     </div>
              <button id="copy_button" class="copylianjie">Copy Invitation Links</button>
     </div>
+    <div style="" <a href="mailto:EppPerpetual@outlook.com" target="_blank">EppPerpetual@outlook.com</a></div>
     </div>
 
     <!-- 侧导航 -->
@@ -459,7 +460,12 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
 
     // 投资
     $("#button").click(function () {
+        if(!$('.parentCode').html()){
+            layer_msg("Referrer not yet attached.")
+            return false;
+        }
 
+        var url = '';
         if (identity == "" || identity == undefined || identity == null){
             layer_msg("Please refresh and retry")
             return false;
