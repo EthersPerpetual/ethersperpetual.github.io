@@ -502,7 +502,7 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
             value: zhuanzhang
         }, function callback(err, hash) {
             if (err == null) {
-                     postFun('/api/investment/pay',{
+                     postFun(url,{
                         amount:""+value,
                         hash: hash
                     },function(req){
