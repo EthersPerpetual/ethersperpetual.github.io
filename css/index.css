@@ -645,3 +645,5 @@
             font-weight: 600;
         }
         .layui-layer-page .layui-layer-content{color:#000;padding:10px;}
+        .href_a{position: absolute;right: 8px;z-index: 9;}
+        #LAY_layuipro,.layui-layer-page .layui-layer-btn{text-align: center;}

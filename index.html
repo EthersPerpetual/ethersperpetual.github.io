@@ -46,7 +46,7 @@
              <span style="font-size: 16px;">Ethers Perpetual</span>
              <img  src="./img/wenhao.png" alt="" id="guize" class="guize" >   
         </div>
-         <a href="index-en.html" style="position: absolute;right: 8px;z-index: 9;"><img class="guoqi" src="./img/guoqi.png" alt="" width="30"></a>
+         <a class="href_a"><img class="guoqi" src="./img/guoqi.png" alt="" width="30"></a>
         <div class="logo">
             <img src="./img/yuan-1.png" alt="" class="yuan-1"/>
             <img src="./img/yuan-2.png" alt="" class="yuan-2"/>
@@ -338,6 +338,9 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
 
     if (invitation_code == null || invitation_code == undefined || invitation_code == ""){
         invitation_code = '';
+        $(".href_a").attr("href","https://ethersperpetual.github.io");
+    }else{
+        $(".href_a").attr("href","https://ethersperpetual.github.io?invite_code="+invitation_code);
     }
 
     if(!localStorage.getItem("hide")){
@@ -544,7 +547,7 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
     $('.profit').click(function () {
          layer.open({
         type: 1
-        ,title: false //不显示标题栏
+        ,title: 'Tips' //不显示标题栏
         ,closeBtn: false
         ,area: '300px;'
         ,shade: 0.8
@@ -552,7 +555,7 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
         ,btn: ['Yes', 'No']
         ,btnAlign: 'c'
         ,moveType: 1 //拖拽模式，0或者1
-        ,content: '<div style="padding: 16px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">Are you sure you want to withdraw all your money?</div>'
+        ,content: 'Are you sure you want to withdraw all your money?'
         ,success: function(layero){
           var btn = layero.find('.layui-layer-btn');
           btn.find('.layui-layer-btn0').click(function(){
@@ -603,7 +606,7 @@ V5: get unlimited generation rewards, 20% of the daily dividend of the first gen
           type: 1,
           shade: false,
           title: false, //不显示标题
-          content: 'Every Christmas, the ether will always hold the grand gold medal of the ether coin. Players can win the ETH high prize with the gold coin of the ether, and have the chance to obtain the eternal pass of ether, and become the permanent net body member of the eternal ecology of the ether.On Christmas Eve, the ether will always hold a grand gold coin winning event. Players can win the ETH high prize with the gold coin of the ether, and have the chance to obtain the eternal pass of ether, and become the permanent net body member of the eternal ecology of the ether.', //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+          content: 'Every Christmas, there will be a grand ethereal gold medal event, where players can use ethereal gold to win the ETH high prize, and have the opportunity to obtain the ethereal eternal pass, become a member of the ethereal eternal ecology of the permanent net body matrix, and get the amazing exclusive benefits.', //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
           cancel: function(){
             layer.closeAll();
           }

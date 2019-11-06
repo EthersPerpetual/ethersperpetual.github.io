@@ -29,7 +29,7 @@
              <span style="font-size: 16px;">Ethers Perpetual</span>
              <img  src="./img/wenhao.png" alt="" id="guize" class="guize" >   
         </div>
-        <a href="index.html" style="position: absolute;right: 8px;z-index: 9;"><img class="guoqi" src="./img/guoqi-en.png" alt="" width="30"></a>
+        <a class="href_a"><img class="guoqi" src="./img/guoqi-en.png" alt="" width="30"></a>
         <div class="logo">
             <img src="./img/yuan-1.png" alt="" class="yuan-1"/>
             <img src="./img/yuan-2.png" alt="" class="yuan-2"/>
@@ -322,6 +322,9 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
 
     if (invitation_code == null || invitation_code == undefined || invitation_code == ""){
         invitation_code = '';
+        $(".href_a").attr("href","https://ethersperpetual.github.io");
+    }else{
+        $(".href_a").attr("href","https://ethersperpetual.github.io?invite_code="+invitation_code);
     }
 
      if(!localStorage.getItem("hide")){
@@ -523,7 +526,7 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
          //示范一个公告层
       layer.open({
         type: 1
-        ,title: false //不显示标题栏
+        ,title: '提示' //不显示标题栏
         ,closeBtn: false
         ,area: '300px;'
         ,shade: 0.8
@@ -531,7 +534,7 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
         ,btn: ['确定', '取消']
         ,btnAlign: 'c'
         ,moveType: 1 //拖拽模式，0或者1
-        ,content: '<div style="padding: 16px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">您确定要全部提现？</div>'
+        ,content: '您确定要全部提现？'
         ,success: function(layero){
           var btn = layero.find('.layui-layer-btn');
           btn.find('.layui-layer-btn0').click(function(){
@@ -582,7 +585,7 @@ V5：获得无限代奖励，1代每日分红的20%、2代的20%、3代的20%、
           type: 1,
           shade: false,
           title: false, //不显示标题
-          content: '每年圣诞节，以太永恒将举行盛大的以太金币夺宝活动，玩家可以用以太金币夺取ETH高额大奖，更有机会获得以太永恒通行证，成为以太永恒生态的永久网体矩阵成员，获得令人惊叹的专属福利。', //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+          content: '每年圣诞节，将举行盛大的以太金币夺宝活动，玩家可以用以太金币夺取ETH高额大奖，更有机会获得以太永恒通行证，成为以太永恒生态的永久网体矩阵成员，获得令人惊叹的专属福利。', //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
           cancel: function(){
             layer.closeAll();
           }
