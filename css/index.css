@@ -1,37 +1,46 @@
-
 * {
     margin: 0;
     padding: 0;
 }
-.huang,.allBets,.supporter{color:#f0b64a;}
+
+.huang, .allBets, .supporter {
+    color: #f0b64a;
+}
 .heard {
+
     /*width: 100%;*/
     height: 40px;
-    padding:0 10px;
+    padding: 0 10px;
     color: white;
     font-weight: 600;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background:rgba(5, 20, 39, 0.41);
+    background: rgba(5, 20, 39, 0.41);
 }
 .caidan {
     width: 18px;
-}   
+    height:16.5px;
+    background:url(../img/cd.png?__spriter) no-repeat;
+}
 .guize {
     width: 25px;
+    height:25px;
+     background:url(../img/wenhao.png?__spriter) no-repeat;
     float: right;
 }
-.logo{
-    height:400px;
-    position:relative;
-    overflow:hidden;
+.logo {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
     max-width: 375px;
     margin: 0 auto;
 }
-.yuan-1{
-    position:absolute;
-        width: 300px;
+.yuan-1 {
+    position: absolute;
+    width: 300px;
+     height: 300px;
+     background:url(../img/yuan-1.png?__spriter) no-repeat;
     top: 50%;
     margin-top: -150px;
     margin-left: -150px;
@@ -39,44 +48,44 @@
     -webkit-animation: spin 8s linear 8s 5 alternate;
     animation: spin 8s linear infinite;
 }
-.yuan-2{
-    position:absolute;
-        width: 330px;
-        top: 38px;
+.yuan-2 {
+    position: absolute;
+    width: 330px;
+     height: 330px;
+     background:url(../img/yuan-2.png?__spriter) no-repeat;
+    top: 38px;
     left: 23px;
     -webkit-animation: spin 5s linear 5s 5 alternate;
     animation: spin 5s linear infinite;
 }
-.yuan-3{
-    position:absolute;
-        width: 280px;
+.yuan-3 {
+    position: absolute;
+    width: 280px;
+    height: 262px;
+     background:url(../img/yuan-3.png?__spriter) no-repeat;
     top: 80px;
     left: 46px;
 }
-.yuan-4{
-    position:absolute;
-        width: 280px;
+.yuan-4 {
+    position: absolute;
+    width: 280px;
+     height: 261px;
+     background:url(../img/yuan-4.png?__spriter) no-repeat;
     top: 79px;
     left: 53px;
     -webkit-animation: spin2 10s linear 10s 5 alternate;
     animation: spin2 10s linear infinite;
 }
-.yuan-5{
-   position: absolute;
-    width: 250px;
-    top: 98px;
-    left: 69px;
-    -webkit-animation: spin2 3s linear 10s 5 alternate;
-    animation: spin2 3s linear infinite;
-}
-.yuan-6{
-        width: 138px;
+
+.yuan-6 {
+    width: 138px;
+    height:138px;
+     background:url(../img/yuan-6.png?__spriter) no-repeat;
     position: absolute;
     top: 135px;
-        left: 50%;
+    left: 50%;
     margin-left: -69px;
 }
-
 @-webkit-keyframes spin {
     from {
         -webkit-transform: rotate(0deg);
@@ -85,7 +94,6 @@
         -webkit-transform: rotate(360deg);
     }
 }
-
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -94,7 +102,6 @@
         transform: rotate(360deg);
     }
 }
-
 @-webkit-keyframes spin2 {
     from {
         -webkit-transform: rotate(360deg);
@@ -103,7 +110,6 @@
         -webkit-transform: rotate(0deg);
     }
 }
-
 @keyframes spin2 {
     from {
         transform: rotate(360deg);
@@ -112,11 +118,13 @@
         transform: rotate(0deg);
     }
 }
+.kong {
+    height: 21em;
+}
 
-.kong{height:21em;}
 /*box2*/
-.title{
-        color: #cff8ff;
+.title {
+    color: #cff8ff;
     font-size: 22px;
     background: url(../img/title.png) no-repeat;
     width: 150px;
@@ -126,8 +134,8 @@
     line-height: 50px;
     text-align: center;
 }
-.txt{
-        height: 240px;
+.txt {
+    height: 240px;
     background: url(../img/txt.png) no-repeat;
     width: 74%;
     margin: 20px auto;
@@ -137,81 +145,88 @@
     padding: 30px 25px 0;
     letter-spacing: 1px;
     text-indent: 2em;
-    position:relative;
+    position: relative;
 }
-.txt::before{
-    content:'';
-    display:block;
-    width:100px;
-    height:80px;
-    background:url(../img/hot.png) no-repeat 100% / 100%;
-        position: absolute;
-       right: -32px;
+.txt::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 77px;
+    background: url(../img/hot.png?__spriter) no-repeat;
+    position: absolute;
+    right: -32px;
     bottom: -30px;
-
 }
 
 /*box3*/
-.box-1{margin-top: 10px;}
-.game-title{
+.box-1 {
+    margin-top: 10px;
+}
+.game-title {
     background: url(../img/game.png) no-repeat;
     background-size: 100%;
-    width:88%;
-    margin:0 auto;
-    position:relative;
-    }
-.game-title h1{
-        font-weight: normal;
+    width: 88%;
+    margin: 0 auto;
+    position: relative;
+}
+.game-title h1 {
+    font-weight: normal;
     text-align: center;
     color: #7265ff;
     padding: 26px 0 0;
     font-size: 26px;
 }
-.game-title span{
+.game-title span {
     font-size: 12px;
     text-align: center;
     display: inline-block;
     padding: 4px 0 17px;
-    width:100%;
+    width: 100%;
 }
-.game-title::before,.game-title::after{
-        content: '';
+.game-title::before, .game-title::after {
+    content: '';
     display: block;
     width: 5px;
     height: 43px;
-    background: url(../img/64_18.png) no-repeat 100% / 100%;
+    background: url(../img/64_18.png?__spriter) no-repeat;
     border-radius: 100%;
     position: absolute;
     bottom: -41px;
     z-index: 9;
 }
-
-.game-title::before{left: 69px;}
-.game-title::after{right: 69px;}
-
-.game-box{
-        width: 85%;
+.game-title::before {
+    left: 69px;
+}
+.game-title::after {
+    right: 69px;
+}
+.game-box {
+    width: 85%;
     margin: 15px auto;
     background: #051b50;
     border-radius: 30px;
     border: 11px solid #06163d;
     padding-top: 35px;
-    position:relative;
+    position: relative;
 }
-.game-box::before,.game-box::after{
+.game-box::before, .game-box::after {
     content: '';
-    display:block;
-    width:12px;
-    height:12px;
-    background:#0a0522;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: #0a0522;
     border-radius: 100%;
-    position:absolute;
+    position: absolute;
     top: 10px;
 }
-.game-box::before{left: 60px;}
-.game-box::after{right: 60px;}
-.game-box h2{
-        font-size: 14px;
+.game-box::before {
+    left: 60px;
+}
+.game-box::after {
+    right: 60px;
+}
+.game-box h2 {
+    font-size: 14px;
     font-weight: normal;
     padding: 3px 16px;
 }
@@ -221,11 +236,9 @@
     justify-content: center;
     align-items: center;
 }
-
 .back5>img {
     width: 80%;
 }
-
 .back5_1 {
     width: 93%;
     display: flex;
@@ -233,9 +246,8 @@
     align-items: center;
     color: white;
 }
-
 .back5_1>div {
-        width: 33.33%;
+    width: 33.33%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -246,21 +258,28 @@
     margin: 4px 5px;
     background-size: 100%;
 }
-
 .jiajian {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin:20px 0;
+    margin: 20px 0;
 }
-
+.jian{
+    width: 33px;
+    height:33px;
+    background: url(../img/jian.png?__spriter) no-repeat;
+}
+.jia{
+    width: 33px;
+    height:33px;
+    background: url(../img/jia.png?__spriter) no-repeat;
+}
 .jiajian>img {
     width: 10%;
 }
-
-.jiajian>div {
-        width: 120px;
+.jiajian .shuzi {
+    width: 120px;
     height: 35px;
     border: 1px dashed white;
     margin: 0 20px;
@@ -271,8 +290,7 @@
     justify-content: center;
     align-items: center;
 }
-
-.touzhu,.btn {
+.touzhu, .btn {
     width: 108px;
     height: 32px;
     margin: 0 auto;
@@ -284,50 +302,52 @@
     line-height: 32px;
     font-weight: normal;
 }
-.touzhu span{display:none;}
+.touzhu span {
+    display: none;
+}
 .touzhu>img:nth-of-type(1) {
     width: 30%;
 }
-
 .touzhu>img:nth-of-type(2) {
     width: 10%;
     margin-left: 2%;
 }
-
-.fenh{
-    width:80%;
-    margin:15px auto 20px;
-    padding:5px 0;
-    background:#405b83;
+.fenh {
+    width: 80%;
+    margin: 15px auto 20px;
+    padding: 5px 0;
+    background: #405b83;
     text-align: center;
     border-radius: 30px;
-
 }
-.coefficient{color:#f0b64a;font-size: 16px;}
+.coefficient {
+    color: #f0b64a;
+    font-size: 16px;
+}
 
 /*box4*/
-.box4{
+.box4 {
     background: url(../img/64_27.png) no-repeat;
-    background-size:100%;
-    width:90%;
-    margin:0 auto 40px;
+    background-size: 100%;
+    width: 90%;
+    margin: 0 auto 40px;
 }
-.box4 h3{
-        text-align: center;
+.box4 h3 {
+    text-align: center;
     font-size: 16px;
     padding: 8px;
 }
-.cantent{
+.cantent {
     width: 100%;
     font-size: 14px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 45px 0 11px;
-    
 }
-.hit{text-align: center;}
-
+.hit {
+    text-align: center;
+}
 .cantent>div {
     width: 85%;
     height: 30px;
@@ -335,44 +355,41 @@
     justify-content: space-around;
     align-items: center;
 }
-
 .cantent>div>span:nth-of-type(1) {
     width: 60%;
 }
-
 .cantent>div>span:nth-of-type(2) {
     width: 40%;
-    text-align:right;
+    text-align: right;
 }
-.box4 .btn   {
-        margin: 21px 28px 13px;
-    }
+.box4 .btn {
+    margin: 21px 28px 13px;
+}
 
 /*box5*/
-.box5{
+.box5 {
     background: url(../img/64_31.png) no-repeat;
-    background-size:100%;
-    width:90%;
-    margin:15px auto 30px;
-    position:relative;
+    background-size: 100%;
+    width: 90%;
+    margin: 15px auto 30px;
+    position: relative;
 }
-.box5 .cantent{
+.box5 .cantent {
     padding: 34px 5px 0px 20px;
     width: auto;
 }
-.box5::before{
+.box5::before {
     content: '';
     display: inline-block;
-    background: url(../img/line.png) no-repeat 100% / 100%;
+    background: url(../img/line.png?__spriter) no-repeat;
     height: 2px;
-    width: 80%;
-    /* margin: 0 auto; */
+    width: 80%;    /* margin: 0 auto; */
     position: absolute;
     top: 233px;
     left: 50%;
     margin-left: -40%;
 }
-.copylianjie{
+.copylianjie {
     width: 80%;
     height: 40px;
     border: none;
@@ -382,18 +399,17 @@
     margin: 30px 10%;
     font-size: 16px;
 }
-.tips{
+.tips {
     width: 16px;
     vertical-align: bottom;
 }
-.btn-1{
+.btn-1 {
     width: 35px;
     display: inline-block;
     padding: 0 3px 0 8px;
     color: #0097ff;
     text-decoration: underline;
 }
-
 
 /* 侧导航 */
 .aside {
@@ -403,7 +419,6 @@
     top: 0;
     z-index: 999;
 }
-
 .aside_box {
     position: absolute;
     width: 70%;
@@ -414,7 +429,6 @@
     z-index: 9999;
     overflow-y: scroll;
 }
-
 .aside_mask {
     position: absolute;
     width: 100%;
@@ -423,29 +437,30 @@
     top: 0;
     background: rgba(0, 0, 0, .6);
 }
-
 .hide {
     display: none;
 }
 .hide1 {
     display: none;
 }
-
 .userinfo_box .iconfont {
     margin-left: 20px;
     margin-top: 10px;
 }
-
 .userinfo_box .iconfont {
     width: 18px;
     height: 40px;
 }
-.userinfo_box .iconfont img{width:100%;vertical-align: -webkit-baseline-middle;}
+.userinfo_box .iconfont img {
+    width: 100%;
+    vertical-align: -webkit-baseline-middle;
+}
 .userinfo_item {
     display: flex;
     align-items: center;
 }
-.icon-gengduo{    position: absolute;
+.icon-gengduo {
+    position: absolute;
     right: 10px;
     top: -16px;
 }
@@ -462,188 +477,230 @@
     padding: 10px;
 }
 
-        /* 弹出层 */
-        .ceng {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, .4);
-            color: black;
-        }
+/* 弹出层 */
+.ceng {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .4);
+    color: black;
+}
+.fenxiang {
+    width: 50%;
+    height: 200px;
+    background: pink;
+    margin: 100px auto;
+    text-align: center;
+    word-wrap: break-word;
+    position: relative;
+}
+.ret {
+    width: 10%;
+    height: 10%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    right: 5px;
+    top: 2px;
+}
+.fenxiang>#copy_button {
+    width: 120px;
+    height: 30px;
+    border: none;
+    color: white;
+    background: linear-gradient(0deg, rgba(254, 101, 88, 1) 0%, rgba(255, 146, 59, 1) 100%);
+    border-radius: 30px;
+}
 
-        .fenxiang {
-            width: 50%;
-            height: 200px;
-            background: pink;
-            margin: 100px auto;
-            text-align: center;
-            word-wrap: break-word;
-            position: relative;
-        }
-
-        .ret {
-            width: 10%;
-            height: 10%;
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            position: absolute;
-            right: 5px;
-            top: 2px;
-        }
-
-        .fenxiang>#copy_button {
-            width: 120px;
-            height: 30px;
-            border: none;
-            color: white;
-            background: linear-gradient(0deg, rgba(254, 101, 88, 1) 0%, rgba(255, 146, 59, 1) 100%);
-            border-radius: 30px;
-        }
-
-        /* 邀请好友 */
-
-        .rulee {
-            position: absolute;
-            left: 13%;
-            top: 30%;
-            width: 75%;
-            min-height: 220px;
-            z-index: 9999;
-            overflow-y: scroll;
-            background: url('../img/hb.png');
-            background-size: 100%;
-            background-repeat: no-repeat;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-
-        .rulee>div:nth-of-type(1) {
-                width: 70%;
-                margin-top: 150px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: center;
-                overflow: hidden;
-                font-size: 22px;
-                color: #ffe28a;
-                    }
-        .rulee>div:nth-of-type(2){
-         width: 75%;
-        margin-top: 15px;
-        font-size: 16px;
-        color: #fff;
-            }
-        
-        .rulee>div:nth-of-type(2) span{color: #ffe28a;}
-
-        .fei {
-            width: 40%;
-            margin-top: 5%;
-        }
-
-        .copy {
-            word-wrap: break-word;
-            word-break: break-all;
-            overflow: hidden;
-            color: pink;
-        }
-
-        .copy1 {
-            width: 45%;
-            height: 30px;
-            background-size: 100%;
-            color: #A73502;
-            position: absolute;
-            top: 65%;
-            left: 28%;
-            text-align: center;
-            line-height: 26px;
-        }
-
-        .xx {
-                width: 120px;
+/* 邀请好友 */
+.rulee {
+    position: absolute;
+    left: 13%;
+    top: 30%;
+    width: 75%;
+    min-height: 220px;
+    z-index: 9999;
+    overflow-y: scroll;
+    background: url('../img/hb.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.rulee>div:nth-of-type(1) {
+    width: 70%;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    font-size: 22px;
+    color: #ffe28a;
+}
+.rulee>div:nth-of-type(2) {
+    width: 75%;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #fff;
+}
+.rulee>div:nth-of-type(2) span {
+    color: #ffe28a;
+}
+.fei {
+    width: 40%;
+    margin-top: 5%;
+}
+.copy {
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    color: pink;
+}
+.copy1 {
+    width: 45%;
+    height: 30px;
+    background-size: 100%;
+    color: #A73502;
+    position: absolute;
+    top: 65%;
+    left: 28%;
+    text-align: center;
+    line-height: 26px;
+}
+.xx {
+    width: 120px;
     margin: 20px;
     padding: 10px;
     background: linear-gradient(0deg, rgba(254, 101, 88, 1) 0%, rgba(255, 146, 59, 1) 100%);
     border-radius: 20px;
     color: #fff;
-        }
+}
 
-        /* 活动规则 */
-        .activity {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, .8);
-            color: black;
-            z-index: 99;
-        }
+/* 活动规则 */
+.activity {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .8);
+    color: black;
+    z-index: 99;
+}
+.activity_1 {
+    width: 300px;
+    height: 90%;
+    margin: 5% 9%;
+    color: white;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 20px;
+}
+.activity_1>div:nth-of-type(1) {
+    position: absolute;
+    top: 5%;            /*left: %;*/
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: auto;
+    line-height: 2rem;
+    font-size: 14px;
+}
+.activity_1>div:nth-of-type(1)>span {
+    display: block;
+    text-indent: 0.5em;
+}
+.activity_2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.activity_3 {
+    position: absolute;
+    top: 0%;
+    right: -5%;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;            /* background: white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.layui-layer-page .layui-layer-content {
+    color: #000;
+    padding: 10px;
+}
+.box1 .href_a {
+    position: absolute;
+    right: 8px;
+    z-index: 9;
+    width: 30px;
+    height: 25px;
+    display: block;
+    background: url(../img/guoqi.png?__spriter) no-repeat;
+}
+.box1 .href_a.english-guoqi{ background: url(../img/guoqi-en.png) no-repeat !important;background-size: 100%;}
+#LAY_layuipro, .layui-layer-page .layui-layer-btn {
+    text-align: center;
+}
 
-        .activity_1 {
-            width: 300px;
-            height: 90%;
-            margin: 5% 9%;
-            color: white;
-            box-sizing: border-box;
-            position: relative;padding-bottom: 20px;
-        }
-
-        .activity_1>div:nth-of-type(1) {
-            position: absolute;
-            top: 5%;
-            /*left: %;*/
-            width: 100%;
-            height: 100%;
-            margin: 0 auto;
-            overflow: auto;
-            line-height: 2rem;
-                font-size: 14px;
-
-        }
-
-        .activity_1>div:nth-of-type(1)>span {
-            display: block;
-            text-indent: 0.5em;
-        }
-
-        .activity_2 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-
-        .activity_3 {
-            position: absolute;
-            top: 0%;
-            right: -5%;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            /* background: white; */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-        .layui-layer-page .layui-layer-content{color:#000;padding:10px;}
-        .href_a{position: absolute;right: 8px;z-index: 9;}
-        #LAY_layuipro,.layui-layer-page .layui-layer-btn{text-align: center;}
+/*图片*/
+.mune1{
+    display:inline-block;
+    width:18px;
+    height:21px;
+    background: url(../img/1.png?__spriter) no-repeat;
+}
+.mune2{
+    display:inline-block;
+    width:18px;
+    height:18px;
+    background: url(../img/2.png?__spriter) no-repeat;
+}
+.mune3{
+    display:inline-block;
+    width:18px;
+    height:18px;
+    background: url(../img/3.png?__spriter) no-repeat;
+}
+.mune4{
+    display:inline-block;
+    width:18px;
+    height:18px;
+    background: url(../img/4.png?__spriter) no-repeat;
+}
+.mune5{
+    display:inline-block;
+    width:18px;
+    height:18px;
+    background: url(../img/5.png?__spriter) no-repeat;
+}
+.mune6{
+    display:inline-block;
+    width:18px;
+    height:18px;
+    background: url(../img/6.png?__spriter) no-repeat;
+}
+.mune7{
+    display:inline-block;
+    width:18px;
+    height:18px;
+    background: url(../img/7.png?__spriter) no-repeat;
+}
