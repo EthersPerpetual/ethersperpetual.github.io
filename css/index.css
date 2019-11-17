@@ -656,7 +656,7 @@
     display: block;
     background: url(../img/guoqi.png?__spriter) no-repeat;
 }
-.box1 .href_a.english-guoqi{ background: url(../img/guoqi-en.png) no-repeat !important;background-size: 100%;}
+.box1 .href_a.english-guoqi{ background: url(../img/guoqi-en.png) no-repeat !important;background-size: 30px 25px;}
 #LAY_layuipro, .layui-layer-page .layui-layer-btn {
     text-align: center;
 }

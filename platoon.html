@@ -137,7 +137,7 @@
                     html += '<div class="list-box">' 
                                     if(data[i].status==0){
                                             html +='<h2><span class="jin">排单金额：'+ data[i].amount +' ETH</span> <span class="zh" >排单中</span></h2>'+
-                                            '<p>排单时间：' + data[i].gmtCreate + ' <span class="tudan_btn" data="'+ data[i].id  +'">赎回</span></p>'
+                                            '<p>排单时间：' + data[i].gmtCreate + '</p>'
                                         }else if(data[i].status==1){
                                             html +='<h2><span class="jin">排单金额：'+ data[i].amount +' ETH</span> <span class="zh">已投注</span></h2>'+
                                             '<p>排单时间：' + data[i].gmtCreate + '</p>'
@@ -154,65 +154,15 @@
                              html +='</div>'
                     }
                     $(".lists").html(html);
-                    $(".tudan_btn").click(function() {
-                        var id=$(this).attr("data");
-                        postFun('/api/withdrawal/queue',{
-                                id: id
-                            },function(req){
-                                if(req.basic.status == "1"){
-                                    layer_msg(req.basic.msg);
-
-                                    setTimeout(function () {
-                                              postFun('/api/investment/queueList',{
-                                                page: 1,
-                                                pageSize: 100,
-                                            },function(req){
-                                            if (req.basic.status == "1") {
-                                                layer.closeAll();
-                                                     var html = ""   
-                                                    var data = req.data.list
-                                                    // console.log(data)
-                                                    if(data.length !=0){
-                                                        for (i = 0; i < data.length; i++) {
-                                                        html += '<div class="list-box">' 
-                                                                        if(data[i].status==0){
-                                                                            html +='<h2><span class="jin">排单金额：'+ data[i].amount +' ETH</span> <span class="zh" >排单中</span></h2>'+
-                                                                            '<div class="hideTxid"  class="tudan_btn" data="'+ data[i].id  +'">赎回</div>'+
-                                                                            '<p>排单时间：' + data[i].gmtCreate + '</p>'
-                                                                        }else if(data[i].status==1){
-                                                                            html +='<h2><span class="jin">排单金额：'+ data[i].amount +' ETH</span> <span class="zh">已投注</span></h2>'+
-                                                                            '<p>排单时间：' + data[i].gmtCreate + '</p>'
-                                                                        }else if(data[i].status==2){
-                                                                            html +='<h2><span class="jin">排单金额：'+ data[i].amount +' ETH</span> <span class="zh">退款中</span></h2>'+
-                                                                            '<p>退出时间：' + data[i].gmtModified + '</p>' 
-                                                                        }else{
-                                                                            html +='<h2><span class="jin">排单金额：'+ data[i].amount +' ETH</span> <span class="zh">已退款</span></h2>'+
-                                                                                    '<div class="hideTxid">手续费：'+ data[i].fee +' ETH</div>'+
-                                                                                    '<p>退出时间：' + data[i].gmtModified + '</p>'
-                                                                        }
-                                                                 html +='</div>'
-                                                        }
-                                                        $(".lists").html(html);
-                                                         }else{
-                                                            $(".lists").html('暂无记录');
-                                                    }
-                                                     }else{
-                                                 layer_msg(req.basic.msg);
-                                        }})
-                                        }, 2000);
-
-                                }else{
-                                         layer_msg(req.basic.msg);
-                                }
-                            })
-                    });
-                }else{
+                
+        }else {
                     $(".lists").html('暂无记录');
                 }
-                
-        }else{
+    }else{
                  layer_msg(req.basic.msg);
-        }})
+        }
+
+})
 
 
 </script>

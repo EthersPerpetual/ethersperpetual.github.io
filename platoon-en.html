@@ -135,7 +135,7 @@ loadding();
                     html += '<div class="list-box">' 
                                     if(data[i].status==0){
                                             html +='<h2><span class="jin">Amount：'+ data[i].amount +' ETH</span> <span class="zh" >In order</span></h2>'+
-                                            '<p>Scheduling time：' + data[i].gmtCreate + ' <span class="tudan_btn"" data="'+ data[i].id  +'">Redeem</span></p>'
+                                            '<p>Scheduling time：' + data[i].gmtCreate + ' </p>'
                                         }else if(data[i].status==1){
                                             html +='<h2><span class="jin">Amount：'+ data[i].amount +' ETH</span> <span class="zh">Betting</span></h2>'+
                                             '<p>Scheduling time：' + data[i].gmtCreate + '</p>'
@@ -152,67 +152,15 @@ loadding();
                              html +='</div>'
                     }
                     $(".lists").html(html);
-                    $(".tudan_btn").click(function() {
-                        var id=$(this).attr("data");
-                        postFun('/api/withdrawal/queue',{
-                                id: id
-                            },function(req){
-                                if(req.basic.status == "1"){
-                                    layer_msg(req.basic.msg);
-
-                                    setTimeout(function () {
-                                              postFun('/api/investment/queueList',{
-                                                page: 1,
-                                                pageSize: 100,
-                                            },function(req){
-                                            if (req.basic.status == "1") {
-                                                layer.closeAll();
-                                                     var html = ""   
-                                                    var data = req.data.list
-                                                    // console.log(data)
-                                                    if(data.length !=0){
-                                                        for (i = 0; i < data.length; i++) {
-                                                        html += '<div class="list-box">' 
-                                                                        if(data[i].status==0){
-                                                                            html +='<h2><span class="jin">Amount：'+ data[i].amount +' ETH</span> <span class="zh" >In order</span></h2>'+
-                                                                            '<div class="hideTxid"  class="tudan_btn"" data="'+ data[i].id  +'">Redeem</div>'+
-                                                                            '<p>Scheduling time：' + data[i].gmtCreate + '</p>'
-                                                                        }else if(data[i].status==1){
-                                                                            html +='<h2><span class="jin">Amount：'+ data[i].amount +' ETH</span> <span class="zh">Betting</span></h2>'+
-                                                                            '<p>Scheduling time：' + data[i].gmtCreate + '</p>'
-                                                                        }else if(data[i].status==2){
-                                                                            html +='<h2><span class="jin">Amount：'+ data[i].amount +' ETH</span> <span class="zh">Refunding</span></h2>'+
-                                                                            '<p>Exit time：' + data[i].gmtModified + '</p>' 
-                                                                        }else{
-                                                                            html +='<h2><span class="jin">Amount：'+ data[i].amount +' ETH</span> <span class="zh">Refunded</span></h2>'+
-                                                                                    '<div class="hideTxid">Service Charge：'+ data[i].fee +' ETH</div>'+
-                                                                                    '<p>Exit time：' + data[i].gmtModified + '</p>'
-                                                                        }
-                                                                 html +='</div>'
-                                                        }
-                                                        $(".lists").html(html);
-                                                         }else{
-                                                            $(".lists").html('<p>暂无记录</p>');
-                                                    }
-                                                     }else{
-                                                 layer_msg(req.basic.msg);
-                                        }})
-                                        }, 2000);
-
-                                }else{
-                                         layer_msg(req.basic.msg);
-                                }
-                            })
-                    });
-                }else{
-                    $(".lists").html('<p>暂无记录</p>');
-                }
                 
-        }else{
+        }else {
+                    $(".lists").html('No record');
+                }
+    }else{
                  layer_msg(req.basic.msg);
-        }})
+        }
 
-
+})
 </script>
 
 </html>

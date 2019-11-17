@@ -1,4 +1,4 @@
-var api_domain = 'https://www.ethepp.vip/secure';
+var api_domain = 'https://www.vccdapp.com/secure/test';
 var token = '';
 
 /**获取url中字段的值
