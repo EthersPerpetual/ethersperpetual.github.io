@@ -156,7 +156,7 @@ p.subtitle {
             height: 70px;
             border-bottom:1px solid #0B0E1F;
             
-            display: flex;
+            display:  inline-block;
             justify-content: space-between;
             align-items: center;
             color: white;
@@ -170,6 +170,7 @@ p.subtitle {
             font-size: 14px;
                 text-align: left;
                 word-wrap: break-word;
+                float:left;
         }
 
         .left>span:nth-of-type(2) {
@@ -183,6 +184,7 @@ p.subtitle {
             text-align: right;
             color: #6058FF;
             font-size: 14px;
+            float:right;
         }
 
     </style>
@@ -251,7 +253,7 @@ p.subtitle {
         },function(req){
         if (req.basic.status == "1") {
             layer.closeAll();
-                var html = '<div class="left">address </div><div class="right"><span>Grade</span></div></div><div>'
+                var html = '<div class="left">address </div><div class="right"><span>Grade</span></div>'
                 var data = req.data.list;
                 $(".weightingDay").html(req.data.weightingDay+'Day');
                 $(".bonusPools").html(req.data.bonusPools+'ETH');
