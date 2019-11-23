@@ -253,17 +253,17 @@ p.subtitle {
         },function(req){
         if (req.basic.status == "1") {
             layer.closeAll();
-                var html = '<div class="left">地址</div><div class="right"><span>等级</span></div>'
+            var html = '<div style="height:45px"><div class="left">地址</div><div class="right"><span>等级</span></div></div>'
                 var data = req.data.list;
                 $(".weightingDay").html(req.data.weightingDay+'天');
                 $(".bonusPools").html(req.data.bonusPools+'ETH');
                 if (data.length != 0) {
                     for (i = 0; i < data.length; i++) {
 
-                        html += '<div class="left">'+ data[i].address +'</div>'+
+                        html += '<div style="height:45px"><div class="left">'+ data[i].address +'</div>'+
                                 '<div class="right">'+
                                     '<span>LV '+ data[i].staticLevel +'</span>'+
-                                '</div>'
+                                '</div></div>'
 
                     }
                     $(".lists").html(html)
