@@ -255,7 +255,8 @@ p.subtitle {
                 var data = req.data.list;
                 $(".weightingDay").html(req.data.weightingDay+'Day');
                 $(".bonusPools").html(req.data.bonusPools+'ETH');
-                if (data.length != 0) {
+                
+                if (data) {
                     for (i = 0; i < data.length; i++) {
 
                         html += '<div class="left">'+ data[i].address +'</div>'+
