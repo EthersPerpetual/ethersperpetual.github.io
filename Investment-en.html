@@ -115,10 +115,12 @@
                                     ' <span class="jin">Investment amount：' + data[i].amount + ' ETH</span>' 
                                     if(data[i].txStatus==0){
                                         html +=' <span class="zh">Confirm block</span>' 
-                                    }else if(data[i].txStatus==1){
+                                    }else if(data[i].txStatus==1 || data[i].txStatus==3){
                                         html +=' <span class="zh">In revenue</span>' 
-                                    }else{
+                                    }else if(data[i].txStatus==2){
                                         html +=' <span class="zh">Settlement completed</span>' 
+                                    }else if(data[i].txStatus==4){
+                                        html +=' <span class="zh">Abnormal orders</span>' 
                                     }
                             
                                 html +='</h2>' +

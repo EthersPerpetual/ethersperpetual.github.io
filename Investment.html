@@ -115,10 +115,12 @@
                                     ' <span class="jin">投资额：' + data[i].amount + ' ETH</span>' 
                                     if(data[i].txStatus==0){
                                         html +=' <span class="zh">确认区块</span>' 
-                                    }else if(data[i].txStatus==1){
+                                    }else if(data[i].txStatus==1 || data[i].txStatus==3){
                                         html +=' <span class="zh">收益中</span>' 
-                                    }else{
+                                    }else if(data[i].txStatus==2){
                                         html +=' <span class="zh">结算完成</span>' 
+                                    }else if(data[i].txStatus==4){
+                                        html +=' <span class="zh">异常订单</span>' 
                                     }
                             
                                 html +='</h2>' +
