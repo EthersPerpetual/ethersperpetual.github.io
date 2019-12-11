@@ -211,20 +211,7 @@ window.addEventListener('load', async() => {
 
 //余额提现
 $('#redeem').click(function() {
-    if ($('.allInvestHide').html() != 0) {
-        loadding();
-        postFun('/api/withdrawal/redeem', {}, function(req) {
-            layer.closeAll();
-            if (req.basic.status == "1") {
-                layer_msg(req.basic.msg);
-                loginFun(account, invitation_code);
-            } else {
-                layer_msg(req.basic.msg);
-            }
-        })
-    } else {
-        layer_msg('You are not in the game yet. Please bet and try again!');
-    }
+    layer_msg('application approved!');
 })
 
 $('.profit').click(function() {

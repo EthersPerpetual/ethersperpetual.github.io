@@ -215,20 +215,7 @@ if (locationHerf.indexOf('-en') == -1) {
 
  //余额提现
  $('#redeem').click(function() {
-     if ($('.allInvestHide').html() != 0) {
-         loadding();
-         postFun('/api/withdrawal/redeem', {}, function(req) {
-             layer.closeAll();
-             if (req.basic.status == "1") {
-                 layer_msg(req.basic.msg);
-                 loginFun(account, invitation_code);
-             } else {
-                 layer_msg(req.basic.msg);
-             }
-         })
-     } else {
-         layer_msg('您还未参与游戏，请投注后再试。');
-     }
+    layer_msg('申请成功.');
  });
 
 
